@@ -91,7 +91,7 @@ function displayProgramsByCategory(category) {
             <h3>${program.name}</h3>
             <p><strong>Категория:</strong> ${program.category}</p>
             <p><strong>Описание:</strong> ${program.description}</p>
-            <a href="${program.link}" target="_blank"><button>Перейти на сайт</button></a>
+            <a href="${program.link}" target="_blank"><button>Скачать</button></a>
         `;
         programList.appendChild(programCard);
     });
