@@ -34,7 +34,7 @@ nav ul {
 }
 
 nav li {
-    display: inline;
+    display: inline-block;
     margin: 0 15px;
 }
 
@@ -42,6 +42,14 @@ nav a {
     color: white;
     text-decoration: none;
     font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+nav img {
+    width: 32px;  /* Можно изменить на 64px */
+    height: 32px;
+    margin-right: 8px;
 }
 
 /* Список программ */
