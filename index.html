@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Android - SoftLab</title>
+    <title>Главная - SoftLab</title>
 
     <!-- Подключаем основной CSS файл -->
     <link rel="stylesheet" href="style.css">
@@ -17,7 +17,6 @@
 
 <body>
     <header>
-
         <input type="text" id="search" placeholder="Поиск программ..." oninput="searchPrograms()">
     </header>
 
@@ -34,13 +33,10 @@
     <div id="program-list" class="program-list"></div>
 
     <script>
-        // Функция для отображения всех программ
-        function displayPrograms() {
-            const programList = document.getElementById("program-list");
-            programList.innerHTML = ''; // Очистить список программ, если что-то есть
-
-            programs.forEach(program => {
-                const programCard = document.createElement("div");
-                programCard.classList.add("program");
-
-                progra
+        // Отображение всех программ на главной странице
+        window.onload = function() {
+            displayPrograms();
+        };
+    </script>
+</body>
+</html>
