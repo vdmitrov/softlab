@@ -25,12 +25,20 @@ body {
 
 .menu ul li {
     margin: 0 15px;
+    display: flex;
+    align-items: center; /* Это выровняет текст и иконку по центру */
 }
 
 .menu ul li a {
     color: white;
     text-decoration: none;
     font-size: 16px;
+    display: flex;
+    align-items: center; /* Центрирует текст и иконку по вертикали */
+}
+
+.menu ul li a img {
+    margin-right: 8px; /* Отступ между иконкой и текстом */
 }
 
 /* Стиль для поля поиска */
@@ -40,7 +48,7 @@ body {
     border-radius: 5px;
     border: none;
     margin-left: 20px;
-    width: 180px;  /* Устанавливаем ширину для поисковой строки */
+    width: 180px;
     box-sizing: border-box;
 }
 
