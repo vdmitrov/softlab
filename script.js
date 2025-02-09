@@ -1,6 +1,5 @@
-// Массив с данными о программах
 const programs = [
-    {
+    { 
         name: "Google Chrome", 
         category: "Windows", 
         img: "img/chrome.png", 
@@ -72,15 +71,21 @@ const programs = [
     }
 ];
 
-// Функция для отображения всех программ
-function displayPrograms() {
+// Функция отображения программ по категории
+function displayProgramsByCategory(category) {
     const programList = document.getElementById("program-list");
-    programList.innerHTML = ''; // Очистить список программ, если что-то есть
+    if (!programList) return;
 
-    programs.forEach(program => {
+    // Очистка списка перед добавлением новых программ
+    programList.innerHTML = "";
+
+    // Фильтрация программ по категории
+    const filteredPrograms = programs.filter(program => program.category === category);
+
+    // Отображение отфильтрованных программ
+    filteredPrograms.forEach(program => {
         const programCard = document.createElement("div");
         programCard.classList.add("program");
-
         programCard.innerHTML = `
             <img src="${program.img}" alt="${program.name}">
             <h3>${program.name}</h3>
@@ -88,21 +93,21 @@ function displayPrograms() {
             <p><strong>Описание:</strong> ${program.description}</p>
             <a href="${program.link}" target="_blank"><button>Перейти на сайт</button></a>
         `;
-
         programList.appendChild(programCard);
     });
 }
 
-// Функция для отображения программ по категории
-function displayProgramsByCategory(category) {
-    const programList = document.getElementById("program-list");
-    programList.innerHTML = ''; // Очистить список программ
-
-    const filteredPrograms = programs.filter(program => program.category === category);
-
-    filteredPrograms.forEach(program => {
-        const programCard = document.createElement("div");
-        programCard.classList.add("program");
-
-        programCard.innerHTML = `
-            <img src="${program.img}" alt="$
+// Вызов функции, чтобы загрузить программы
+window.onload = function() {
+    const currentPage = window.location.pathname;
+    if (currentPage.includes("android.html")) {
+        displayProgramsByCategory("Android");
+    } else if (currentPage.includes("linux.html")) {
+        displayProgramsByCategory("Linux");
+    } else if (currentPage.includes("windows.html")) {
+        displayProgramsByCategory("Windows");
+    } else {
+        // Отображаем все программы на главной странице
+        displayProgramsByCategory("Windows"); // Или добавьте условие для других категорий
+    }
+};
