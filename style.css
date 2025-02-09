@@ -1,113 +1,39 @@
-/* Общие стили */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-/* Шапка */
-header {
-    background: #333;
-    color: white;
-    padding: 15px;
-    text-align: center;
-}
-
-header input {
-    width: 80%;
-    padding: 10px;
-    margin-top: 10px;
-    font-size: 16px;
-}
-
-/* Меню */
-nav {
-    background: #444;
-    padding: 10px;
-    text-align: center;
-}
-
+/* Навигация */
 nav ul {
     list-style: none;
+    display: flex;
+    justify-content: center;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 40px; /* Расстояние между пунктами */
+    background-color: #333;
 }
 
-nav li {
-    display: flex;
-    flex-direction: column; /* Размещаем элементы в колонку */
-    align-items: center; /* Выравниваем по центру */
-    text-align: center;
-    width: 120px; /* Фиксированная ширина для всех элементов */
+nav ul li {
+    margin: 0 10px;
 }
 
-nav a {
+nav ul li a {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-decoration: none;
     color: white;
-    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
 }
 
-nav img {
-    width: 40px;
-    height: 40px;
-    display: block;
-    margin-bottom: 5px; /* Добавляем отступ вниз */
+nav ul li a img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
 }
 
-/* Список программ */
-main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
+/* Подсветка активной вкладки */
+nav ul li a.active {
+    background-color: #4CAF50; /* Зеленый цвет активной вкладки */
+    font-weight: bold;
 }
 
-.program {
-    background: white;
-    width: 250px;
-    margin: 15px;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.program img {
-    width: 80px; /* Сделал чуть меньше, чтобы текст не сдвигался */
-    height: 80px;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto 10px auto;
-}
-
-.program h3 {
-    font-size: 18px;
-    margin: 0 0 5px 0;
-}
-
-.program p {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.program button {
-    background: #28a745;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    font-size: 16px;
-}
-
-.program button:hover {
-    background: #218838;
+/* Ховер эффект */
+nav ul li a:hover {
+    background-color: #555;
 }
