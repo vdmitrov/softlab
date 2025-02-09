@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SoftLab</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
         <h1>SoftLab</h1>
-        <div class="search-container">
-            <input type="text" id="search" placeholder="Поиск программ..." oninput="searchPrograms()">
-        </div>
+        <input type="text" id="search" placeholder="Поиск программ..." oninput="searchPrograms()">
     </header>
 
     <div class="container">
@@ -24,10 +23,10 @@
         </nav>
     </div>
 
-    <div class="program-list" id="program-list">
-        <!-- Программы будут загружены через JS -->
-    </div>
+    <div id="program-list" class="program-list"></div>
 
-    <script src="script.js"></script>
+    <script>
+        loadPrograms("All");  // Загрузим все программы для главной страницы
+    </script>
 </body>
 </html>
