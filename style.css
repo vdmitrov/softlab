@@ -74,12 +74,26 @@ body {
     text-align: center;
     transition: transform 0.3s ease;
     height: 250px; /* Ограничиваем высоту карточек */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .program img {
     max-width: 100%;
     height: auto;
     border-radius: 5px;
+    margin-bottom: 10px; /* Добавляем отступ для текста */
+}
+
+.program .text {
+    font-size: 14px; /* Размер шрифта текста */
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Обрезаем текст, если он выходит за пределы */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4; /* Максимум 4 строки текста */
 }
 
 .program:hover {
