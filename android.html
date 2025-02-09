@@ -7,50 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>SoftLab</h1>
-        <input type="text" placeholder="Поиск программ...">
-    </header>
 
-    <nav>
-        <ul>
-            <li><a href="windows.html"><img src="icons/windows.png" alt="Windows"> Для Windows</a></li>
-            <li><a href="linux.html"><img src="icons/linux.png" alt="Linux"> Для Linux</a></li>
-            <li><a href="android.html" class="active"><img src="icons/android.png" alt="Android"> Для Android</a></li>
-        </ul>
-    </nav>
+<header>
+    <h1>SoftLab</h1>
+    <input type="text" id="search" placeholder="🔍 Поиск программ..." oninput="searchPrograms()">
+</header>
 
-    <div class="program-list">
-        <div class="program">
-            <img src="icons/telegram.png" alt="Telegram">
-            <h2>Telegram</h2>
-            <p>Android</p>
-            <button>Скачать</button>
-        </div>
+<nav>
+    <ul>
+        <li><a href="windows.html"><img src="img/windows.png" alt="Windows"> Для Windows</a></li>
+        <li><a href="linux.html"><img src="img/linux.png" alt="Linux"> Для Linux</a></li>
+        <li><a href="android.html" class="active"><img src="img/android.png" alt="Android"> Для Android</a></li>
+    </ul>
+</nav>
 
-        <div class="program">
-            <img src="icons/whatsapp.png" alt="WhatsApp">
-            <h2>WhatsApp</h2>
-            <p>Android</p>
-            <button>Скачать</button>
-        </div>
+<div id="program-list"></div>
 
-        <!-- Закомментированные карточки для будущего -->
-        <!--
-        <div class="program">
-            <img src="icons/instagram.png" alt="Instagram">
-            <h2>Instagram</h2>
-            <p>Android</p>
-            <button>Скачать</button>
-        </div>
-
-        <div class="program">
-            <img src="icons/youtube.png" alt="YouTube">
-            <h2>YouTube</h2>
-            <p>Android</p>
-            <button>Скачать</button>
-        </div>
-        -->
-    </div>
+<script src="script.js"></script>
 </body>
 </html>
