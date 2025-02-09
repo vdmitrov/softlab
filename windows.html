@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Windows - SoftLab</title>
+
+    <!-- Подключаем основной CSS файл -->
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
-        <!-- Подключаем мобильный CSS файл -->
+
+    <!-- Подключаем мобильный CSS файл -->
     <link rel="stylesheet" href="mobile.css" media="only screen and (max-width: 768px)">
+
+    <!-- Подключаем основной скрипт -->
+    <script defer src="script.js"></script>
 </head>
+
 <body>
     <header>
-      
         <input type="text" id="search" placeholder="Поиск программ..." oninput="searchPrograms()">
     </header>
 
@@ -28,7 +33,10 @@
     <div id="program-list" class="program-list"></div>
 
     <script>
-        displayProgramsByCategory("Windows");
+        // Отображаем программы для Windows
+        window.onload = function() {
+            displayProgramsByCategory("Windows");
+        };
     </script>
 </body>
 </html>
