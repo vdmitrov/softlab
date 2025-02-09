@@ -5,24 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Windows - SoftLab</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
+    <header>
+        <h1>SoftLab</h1>
+        <input type="text" id="search" placeholder="Поиск программ..." oninput="searchPrograms()">
+    </header>
 
-<header>
-    <h1>SoftLab</h1>
-    <input type="text" id="search" placeholder="🔍 Поиск программ..." oninput="searchPrograms()">
-</header>
+    <nav>
+        <ul>
+            <li><a href="windows.html" class="active"><img src="img/windows.png" alt="Windows"> Для Windows</a></li>
+            <li><a href="linux.html"><img src="img/linux.png" alt="Linux"> Для Linux</a></li>
+            <li><a href="android.html"><img src="img/android.png" alt="Android"> Для Android</a></li>
+        </ul>
+    </nav>
 
-<nav>
-    <ul>
-        <li><a href="windows.html" class="active"><img src="img/windows.png" alt="Windows"> Для Windows</a></li>
-        <li><a href="linux.html"><img src="img/linux.png" alt="Linux"> Для Linux</a></li>
-        <li><a href="android.html"><img src="img/android.png" alt="Android"> Для Android</a></li>
-    </ul>
-</nav>
+    <div id="program-list" class="program-list"></div>
 
-<div id="program-list"></div>
-
-<script src="script.js"></script>
+    <script>
+        displayProgramsByCategory("Windows");
+    </script>
 </body>
 </html>
