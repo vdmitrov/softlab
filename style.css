@@ -23,7 +23,7 @@ nav ul li a {
 }
 
 nav ul li img {
-    width: 32px;
+    width: 32px;  /* Размер иконок */
     height: 32px;
     margin-right: 10px;
 }
