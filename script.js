@@ -75,10 +75,20 @@ const programs = [
 // Функция для отображения всех программ
 function displayPrograms() {
     const programList = document.getElementById("program-list");
-    programList.innerHTML = '';
+    programList.innerHTML = ''; // Очистить список программ, если что-то есть
 
     programs.forEach(program => {
-        const programCard = createProgramCard(program);
+        const programCard = document.createElement("div");
+        programCard.classList.add("program");
+
+        programCard.innerHTML = `
+            <img src="${program.img}" alt="${program.name}">
+            <h3>${program.name}</h3>
+            <p><strong>Категория:</strong> ${program.category}</p>
+            <p><strong>Описание:</strong> ${program.description}</p>
+            <a href="${program.link}" target="_blank"><button>Перейти на сайт</button></a>
+        `;
+
         programList.appendChild(programCard);
     });
 }
@@ -86,28 +96,13 @@ function displayPrograms() {
 // Функция для отображения программ по категории
 function displayProgramsByCategory(category) {
     const programList = document.getElementById("program-list");
-    programList.innerHTML = '';
+    programList.innerHTML = ''; // Очистить список программ
 
     const filteredPrograms = programs.filter(program => program.category === category);
 
     filteredPrograms.forEach(program => {
-        const programCard = createProgramCard(program);
-        programList.appendChild(programCard);
-    });
-}
+        const programCard = document.createElement("div");
+        programCard.classList.add("program");
 
-// Функция для создания карточки программы
-function createProgramCard(program) {
-    const programCard = document.createElement("div");
-    programCard.classList.add("program");
-
-    programCard.innerHTML = `
-        <img src="${program.img}" alt="${program.name}">
-        <h3>${program.name}</h3>
-        <p><strong>Категория:</strong> ${program.category}</p>
-        <p><strong>Описание:</strong> ${program.description}</p>
-        <a href="${program.link}" target="_blank"><button>Перейти на сайт</button></a>
-    `;
-
-    return programCard;
-}
+        programCard.innerHTML = `
+            <img src="${program.img}" alt="$
