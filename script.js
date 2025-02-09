@@ -9,7 +9,7 @@ const programs = [
     { 
         name: "VLC Media Player", 
         category: "Windows", 
-        img: "img/VLC.png", 
+        img: "img/vlc.png", 
         link: "#", 
         description: "Популярный медиаплеер с поддержкой множества форматов."
     },
