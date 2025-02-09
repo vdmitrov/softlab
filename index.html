@@ -1,36 +1,52 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная - SoftLab</title>
-
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mobile.css" media="only screen and (max-width: 768px)">
-    <script defer src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Главная - SoftLab</title>
+  
+  <!-- Основной CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Мобильный CSS (подключается для экранов до 768px) -->
+  <link rel="stylesheet" href="mobile.css" media="only screen and (max-width: 768px)">
+  
+  <!-- Подключение основного скрипта -->
+  <script defer src="script.js"></script>
 </head>
-
 <body>
-    <header>
-        <div class="menu">
-            <ul>
-                <li><a href="windows.html"><img src="img/windows.png" alt="Windows"> Windows</a></li>
-                <li><a href="linux.html"><img src="img/linux.png" alt="Linux"> Linux</a></li>
-                <li><a href="android.html"><img src="img/android.png" alt="Android"> Android</a></li>
-            </ul>
-            <input type="text" id="search" placeholder="🔍︎ Поиск программ..." oninput="searchPrograms()">
-        </div>
-    </header>
-
-    <div class="container">
-        <div id="program-list" class="program-list"></div>
+  <header>
+    <!-- Кнопка гамбургера для мобильной версии (видна в mobile.css) -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
+    <!-- Меню с категориями и поисковой строкой -->
+    <div class="menu">
+      <ul>
+        <li><a href="windows.html"><img src="img/windows.png" alt="Windows"> Windows</a></li>
+        <li><a href="linux.html"><img src="img/linux.png" alt="Linux"> Linux</a></li>
+        <li><a href="android.html"><img src="img/android.png" alt="Android"> Android</a></li>
+      </ul>
+      <input type="text" id="search" placeholder="🔍︎ Поиск программ..." oninput="searchPrograms()">
+    </div>
+  </header>
+  
+  <div class="container">
+    <div id="program-list" class="program-list"></div>
+  </div>
+  
+  <script>
+    // Функция для переключения отображения меню (для мобильной версии)
+    function toggleMenu() {
+      const menu = document.querySelector(".menu");
+      menu.classList.toggle("open");
+    }
 
-    <script>
-        // Здесь можно отобразить все программы или конкретные категории
-        window.onload = function() {
-            displayProgramsByCategory(["Windows", "Linux", "Android"]);
-        };
-    </script>
+    // После загрузки DOM отображаем карточки программ по всем категориям (для главной страницы)
+    window.addEventListener("DOMContentLoaded", function() {
+      displayProgramsByCategory(["Windows", "Linux", "Android"]);
+    });
+  </script>
 </body>
 </html>
