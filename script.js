@@ -1,6 +1,6 @@
 // Массив с данными о программах
 const programs = [
-    { 
+    {
         name: "Google Chrome", 
         category: "Windows", 
         img: "img/chrome.png", 
