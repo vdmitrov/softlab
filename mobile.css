@@ -1,6 +1,5 @@
 /* Мобильные стили */
 @media (max-width: 768px) {
-    /* Скрываем меню по умолчанию */
     .menu {
         display: none;
         width: 100%;
@@ -12,7 +11,7 @@
         justify-content: flex-start;
         align-items: flex-start;
         flex-direction: column;
-        padding-top: 50px; /* Чтобы меню не перекрывало верхнюю панель */
+        padding-top: 50px;
     }
 
     .menu.open {
@@ -31,7 +30,6 @@
         width: 100%;
     }
 
-    /* Кнопка гамбургера */
     .hamburger {
         display: flex;
         position: absolute;
@@ -51,9 +49,8 @@
         width: 100%;
     }
 
-    /* Программные карточки */
     .program-list {
-        margin-top: 80px; /* Чтобы карточки не перекрывались меню */
+        margin-top: 80px;
         padding: 10px;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
