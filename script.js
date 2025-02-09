@@ -72,48 +72,42 @@ const programs = [
     }
 ];
 
-// Функция для загрузки программ по категории
-function loadPrograms(category) {
+// Функция для отображения всех программ
+function displayPrograms() {
     const programList = document.getElementById("program-list");
-    console.log("Загружаем программы для категории:", category);
+    programList.innerHTML = '';
 
-    if (!programList) {
-        console.error("Контейнер для программ не найден!");
-        return;
-    }
-
-    programList.innerHTML = ''; // Очистить список перед добавлением
-
-    // Фильтрация программ по категории
-    const filteredPrograms = programs.filter(program => category === "All" || program.category === category);
-
-    filteredPrograms.forEach(program => {
-        console.log("Создаем карточку:", program.name);
-
-        const programCard = document.createElement("div");
-        programCard.classList.add("program");
-
-        programCard.innerHTML = `
-            <img src="${program.img}" alt="${program.name}">
-            <h3>${program.name}</h3>
-            <p><strong>Категория:</strong> ${program.category}</p>
-            <p><strong>Описание:</strong> ${program.description}</p>
-            <a href="${program.link}" target="_blank"><button>Перейти на сайт</button></a>
-        `;
-
+    programs.forEach(program => {
+        const programCard = createProgramCard(program);
         programList.appendChild(programCard);
     });
 }
 
-// Получение категории из URL
-function getCategoryFromURL() {
-    const path = window.location.pathname;
-    const page = path.split("/").pop().split(".")[0]; // Извлекаем название страницы
-    return page.charAt(0).toUpperCase() + page.slice(1); // Возвращаем категорию с заглавной буквы
+// Функция для отображения программ по категории
+function displayProgramsByCategory(category) {
+    const programList = document.getElementById("program-list");
+    programList.innerHTML = '';
+
+    const filteredPrograms = programs.filter(program => program.category === category);
+
+    filteredPrograms.forEach(program => {
+        const programCard = createProgramCard(program);
+        programList.appendChild(programCard);
+    });
 }
 
-// Загружаем программы при загрузке страницы
-window.onload = () => {
-    const category = getCategoryFromURL();
-    loadPrograms(category);
-};
+// Функция для создания карточки программы
+function createProgramCard(program) {
+    const programCard = document.createElement("div");
+    programCard.classList.add("program");
+
+    programCard.innerHTML = `
+        <img src="${program.img}" alt="${program.name}">
+        <h3>${program.name}</h3>
+        <p><strong>Категория:</strong> ${program.category}</p>
+        <p><strong>Описание:</strong> ${program.description}</p>
+        <a href="${program.link}" target="_blank"><button>Перейти на сайт</button></a>
+    `;
+
+    return programCard;
+}
