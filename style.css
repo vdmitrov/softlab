@@ -14,19 +14,22 @@ body {
     background-color: #333;
     padding: 10px 20px;
     border-radius: 5px;
+    position: relative; /* Для абсолютного позиционирования поиска */
 }
 
 .menu ul {
     list-style: none;
     display: flex;
+    justify-content: center; /* Центрируем меню */
     margin: 0;
     padding: 0;
+    width: 100%; /* Убедимся, что меню занимает всю ширину */
 }
 
 .menu ul li {
     margin: 0 15px;
     display: flex;
-    align-items: center; /* Это выровняет текст и иконку по центру */
+    align-items: center; /* Выравнивание иконки и текста по вертикали */
 }
 
 .menu ul li a {
@@ -34,7 +37,7 @@ body {
     text-decoration: none;
     font-size: 16px;
     display: flex;
-    align-items: center; /* Центрирует текст и иконку по вертикали */
+    align-items: center; /* Центрируем текст и иконку */
 }
 
 .menu ul li a img {
@@ -47,7 +50,10 @@ body {
     font-size: 14px;
     border-radius: 5px;
     border: none;
-    margin-left: 20px;
+    position: absolute;
+    right: 20px; /* Позиционируем справа */
+    top: 50%;
+    transform: translateY(-50%); /* Центрируем по вертикали */
     width: 180px;
     box-sizing: border-box;
 }
