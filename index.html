@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная - SoftLab</title>
+    <title>Android - SoftLab</title>
 
     <!-- Подключаем основной CSS файл -->
     <link rel="stylesheet" href="style.css">
@@ -18,9 +18,17 @@
 <body>
     <header>
         <input type="text" id="search" placeholder="Поиск программ..." oninput="searchPrograms()">
+
+        <!-- Кнопка гамбургера -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </header>
 
     <div class="container">
+        <!-- Меню -->
         <nav class="menu">
             <ul>
                 <li><a href="windows.html"><img src="img/windows.png" alt="Windows"> Windows</a></li>
@@ -33,10 +41,13 @@
     <div id="program-list" class="program-list"></div>
 
     <script>
-        // Отображение всех программ на главной странице
-        window.onload = function() {
-            displayPrograms();
-        };
+        displayProgramsByCategory("Android");
+
+        // Функция для открытия и закрытия меню
+        function toggleMenu() {
+            const menu = document.querySelector(".menu");
+            menu.classList.toggle("open");
+        }
     </script>
 </body>
 </html>
