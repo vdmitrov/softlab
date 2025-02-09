@@ -5,6 +5,7 @@ body {
     padding: 0;
 }
 
+/* ===== HEADER ===== */
 header {
     display: flex;
     justify-content: space-between;
@@ -32,12 +33,13 @@ header h1 {
     outline: none;
 }
 
-nav {
+/* ===== NAVIGATION MENU ===== */
+.menu {
     background-color: #444;
     padding: 10px;
 }
 
-nav ul {
+.menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -45,11 +47,11 @@ nav ul {
     justify-content: center;
 }
 
-nav ul li {
+.menu ul li {
     margin: 0 15px;
 }
 
-nav ul li a {
+.menu ul li a {
     text-decoration: none;
     color: white;
     font-size: 18px;
@@ -59,17 +61,18 @@ nav ul li a {
     transition: 0.3s;
 }
 
-nav ul li a:hover {
+.menu ul li a:hover {
     background-color: #555;
     border-radius: 5px;
 }
 
-nav ul li img {
+.menu ul li img {
     width: 24px;
     height: 24px;
     margin-right: 8px;
 }
 
+/* ===== PROGRAM LIST ===== */
 .program-list {
     display: flex;
     justify-content: center;
@@ -77,6 +80,7 @@ nav ul li img {
     margin-top: 20px;
 }
 
+/* ===== PROGRAM CARD ===== */
 .program {
     background-color: white;
     padding: 15px;
@@ -92,6 +96,25 @@ nav ul li img {
     height: 80px;
 }
 
+.program h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+}
+
+.program p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #444;
+}
+
+/* ===== DESCRIPTION STYLING ===== */
+.program .description {
+    color: #666;
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+/* ===== BUTTON STYLING ===== */
 button {
     background-color: #007bff;
     color: white;
