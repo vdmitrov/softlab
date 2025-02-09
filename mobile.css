@@ -5,152 +5,72 @@
     box-sizing: border-box;
 }
 
-/* Поддержка экрана маленьких телефонов (например, старые модели или компактные телефоны) */
-@media only screen and (max-width: 320px) {
-    body {
-        font-size: 14px;
-    }
-
-    header h1 {
-        font-size: 18px;
-    }
-
-    .menu ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .menu ul li {
-        margin: 10px 0;
-    }
-
-    .program {
-        width: 100%;
-        padding: 10px;
-    }
-
-    .program img {
-        width: 60px;
-        height: 60px;
-    }
+/* Стиль для контейнера, который оборачивает карточки программ */
+.program-list {
+    display: flex;
+    overflow-x: auto; /* Включаем горизонтальный скроллинг */
+    padding: 20px;
+    gap: 15px;
+    scroll-snap-type: x mandatory; /* Добавляем плавное перемещение карточек */
 }
 
-/* Поддержка экрана стандартных телефонов (например, iPhone 5/6/7/8) */
+.program {
+    background-color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 0 0 auto; /* Каждая карточка будет занимать фиксированную ширину */
+    width: 90%; /* Ширина карточки */
+    scroll-snap-align: start; /* Для плавного перемещения карточки в начало */
+    transition: transform 0.3s ease; /* Добавляем анимацию для эффекта при скролле */
+}
+
+/* Эффект при наведении */
+.program:hover {
+    transform: scale(1.05);
+}
+
+/* Обновление для мобильных устройств */
 @media only screen and (max-width: 480px) {
-    body {
-        font-size: 16px;
-    }
-
-    header h1 {
-        font-size: 20px;
-    }
-
-    .menu ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .menu ul li {
-        margin: 10px 0;
+    .program-list {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
     .program {
-        width: 100%;
-        padding: 15px;
+        width: 80%; /* Меньшая ширина карточек на мобильных */
     }
 
-    .program img {
-        width: 70px;
-        height: 70px;
+    /* Убираем пробелы и отступы между карточками на маленьких экранах */
+    .program-list::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .program-list::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px;
+    }
+
+    .program-list::-webkit-scrollbar-track {
+        background: #f1f1f1;
     }
 }
 
-/* Поддержка экрана средних телефонов (например, iPhone X или Google Pixel) */
+/* Стили для планшетов и больших телефонов */
 @media only screen and (max-width: 768px) {
-    body {
-        font-size: 18px;
-    }
-
-    header h1 {
-        font-size: 22px;
-    }
-
-    .menu ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .menu ul li {
-        margin: 12px 0;
-    }
-
     .program {
-        width: 90%;
-        padding: 20px;
-    }
-
-    .program img {
-        width: 80px;
-        height: 80px;
+        width: 70%; /* Еще меньшая ширина для планшетов */
     }
 }
 
-/* Поддержка экрана больших телефонов и небольших планшетов (например, iPhone 12 и Galaxy S) */
-@media only screen and (max-width: 1024px) {
-    body {
-        font-size: 20px;
-    }
-
-    header h1 {
-        font-size: 24px;
-    }
-
-    .menu ul {
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .menu ul li {
-        margin: 0 15px;
-    }
-
-    .program {
-        width: 45%;
+/* Для экранов больше 768px - стандартный вид */
+@media only screen and (min-width: 768px) {
+    .program-list {
         padding: 20px;
     }
 
-    .program img {
-        width: 90px;
-        height: 90px;
-    }
-}
-
-/* Поддержка экранов планшетов и больших телефонов (например, iPad, Galaxy Tab) */
-@media only screen and (min-width: 1025px) {
-    body {
-        font-size: 22px;
-    }
-
-    header h1 {
-        font-size: 26px;
-    }
-
-    .menu ul {
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    .menu ul li {
-        margin: 0 20px;
-    }
-
     .program {
-        width: 30%;
-        padding: 25px;
-    }
-
-    .program img {
-        width: 100px;
-        height: 100px;
+        width: 30%; /* На больших экранах карточки становятся шире */
     }
 }
