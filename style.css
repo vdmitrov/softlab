@@ -77,11 +77,11 @@ header h1 {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    justify-content: flex-start; /* Выравниваем карточки влево */
-    gap: 20px; /* Расстояние между карточками */
+    justify-content: flex-start; /* Карточки будут начинаться слева */
+    gap: 20px;
     padding: 20px;
-    max-width: 1200px; /* Ограничиваем ширину */
-    margin: 0 auto; /* Центрируем контейнер */
+    max-width: 1200px;
+    margin: 0; /* Убрали автоматическое центрирование */
 }
 
 /* ===== PROGRAM CARD ===== */
@@ -91,7 +91,8 @@ header h1 {
     text-align: center;
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    width: 220px; /* Чуть шире для лучшего вида */
+    width: 220px; /* Ширина карточки */
+    flex-grow: 0; /* Запрещаем карточкам растягиваться */
 }
 
 .program img {
