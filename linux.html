@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Android - SoftLab</title>
+    <title>Linux - SoftLab</title>
 
     <!-- Подключаем основной CSS файл -->
     <link rel="stylesheet" href="style.css">
@@ -17,7 +17,6 @@
 
 <body>
     <header>
-
         <input type="text" id="search" placeholder="Поиск программ..." oninput="searchPrograms()">
     </header>
 
@@ -34,7 +33,10 @@
     <div id="program-list" class="program-list"></div>
 
     <script>
-        displayProgramsByCategory("Linux");
+        // Отображаем программы для Linux
+        window.onload = function() {
+            displayProgramsByCategory("Linux");
+        };
     </script>
 </body>
 </html>
