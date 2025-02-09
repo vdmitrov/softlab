@@ -78,7 +78,7 @@ function displayProgramsByCategory(categories) {
   // Фильтруем программы по заданным категориям
   const filteredPrograms = programs.filter(program => categories.includes(program.category));
   
-  // Создаем карточки для отфильтрованных программ
+  // Создаем карточки для каждой отфильтрованной программы
   filteredPrograms.forEach(program => {
     const programCard = document.createElement("div");
     programCard.classList.add("program");
@@ -95,7 +95,6 @@ function displayProgramsByCategory(categories) {
 
 /**
  * Функция поиска по карточкам программ.
- * При вводе текста в поле с id "search" скрывает карточки, в которых текст не содержит введенный запрос.
  */
 function searchPrograms() {
   const query = document.getElementById("search").value.toLowerCase();
@@ -110,12 +109,38 @@ function searchPrograms() {
   });
 }
 
+/**
+ * Функция загрузки мобильного меню из файла mobile_menu.html.
+ */
+function loadMobileMenu() {
+  fetch('mobile_menu.html')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Не удалось загрузить mobile_menu.html");
+      }
+      return response.text();
+    })
+    .then(html => {
+      document.getElementById("mobile-menu-container").innerHTML = html;
+    })
+    .catch(error => {
+      console.error("Ошибка при загрузке мобильного меню:", error);
+    });
+}
+
+/**
+ * Функция переключения отображения мобильного меню.
+ */
+function toggleMobileMenu() {
+  const container = document.getElementById("mobile-menu-container");
+  container.classList.toggle("open");
+}
+
 // Запуск после полной загрузки DOM
 document.addEventListener("DOMContentLoaded", function() {
-  // Определяем текущий путь и выбираем категории
+  // Определяем текущую страницу и выбираем категории
   const path = window.location.pathname.toLowerCase();
   let categories = [];
-  
   if (path.includes("android.html")) {
     categories = ["Android"];
   } else if (path.includes("linux.html")) {
@@ -125,7 +150,6 @@ document.addEventListener("DOMContentLoaded", function() {
   } else {
     categories = ["Windows", "Android", "Linux"];
   }
-  
-  // Отображаем программы для выбранных категорий
   displayProgramsByCategory(categories);
+  loadMobileMenu();
 });
