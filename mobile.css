@@ -1,45 +1,100 @@
 /* Для мобильных устройств */
 @media (max-width: 768px) {
-    /* Контейнер для списка программ */
+    /* Меню с гамбургером */
+    .menu {
+        display: none; /* Скрываем меню по умолчанию */
+    }
+
+    /* Кнопка гамбургера */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+        margin: 10px;
+        background-color: #333;
+        color: white;
+        border-radius: 5px;
+        width: 30px;
+        height: 25px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 999;
+    }
+
+    .hamburger div {
+        width: 100%;
+        height: 4px;
+        background-color: white;
+        margin: 5px 0;
+    }
+
+    /* Открытие меню */
+    .menu.open {
+        display: block;
+        position: absolute;
+        top: 50px; /* Под кнопкой гамбургера */
+        left: 0;
+        right: 0;
+        background-color: #333;
+        padding: 10px 0;
+        border-radius: 5px;
+    }
+
+    /* Элементы меню */
+    .menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .menu a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.1em;
+    }
+
+    /* Карточки */
     #program-list {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    /* Стиль для карточек */
     .program {
-        width: 90%; /* Карточка занимает 90% ширины экрана */
-        max-width: 350px; /* Ограничение ширины карточки */
-        margin: 10px 0; /* Отступы между карточками */
+        width: 90%;
+        max-width: 350px;
+        margin: 10px 0;
         background-color: #fff;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
-        overflow: hidden; /* Обрезаем контент, который выходит за пределы */
+        overflow: hidden;
         display: flex;
         flex-direction: column;
     }
 
-    /* Изображение внутри карточки */
     .program img {
         width: 100%;
-        height: 200px; /* Фиксированная высота для изображения */
-        object-fit: cover; /* Сохраняем пропорции */
+        height: 200px;
+        object-fit: cover;
     }
 
-    /* Заголовок карточки */
-    .program .program-title {
+    .program-title {
         padding: 10px;
         font-size: 1.1em;
         font-weight: bold;
         text-align: center;
-        overflow: hidden; /* Обрезаем текст, если он не помещается */
+        overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
     }
 
-    /* Описание программы */
-    .program .program-description {
+    .program-description {
         padding: 10px;
         font-size: 0.9em;
         color: #555;
@@ -56,31 +111,5 @@
         display: block;
         border-radius: 5px;
         border: 1px solid #ccc;
-    }
-
-    /* Меню навигации */
-    .menu ul {
-        display: flex;
-        justify-content: space-around;
-        padding: 0;
-        margin: 10px 0;
-    }
-
-    .menu li {
-        list-style-type: none;
-    }
-
-    .menu a {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        color: #333;
-        font-weight: bold;
-    }
-
-    .menu a img {
-        width: 24px;
-        height: 24px;
-        margin-right: 8px;
     }
 }
