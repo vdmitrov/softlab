@@ -78,12 +78,12 @@ function displayProgramsByCategory(categories) {
   // Фильтруем программы по заданным категориям
   const filteredPrograms = programs.filter(program => categories.includes(program.category));
   
-  // Для каждой программы создаём карточку и добавляем её в контейнер
+  // Создаем карточки для отфильтрованных программ
   filteredPrograms.forEach(program => {
     const programCard = document.createElement("div");
     programCard.classList.add("program");
     programCard.innerHTML = `
-      <img src="${program.img}" alt="${program.name}" loading="lazy">
+      <img src="${program.img}?v=1" alt="${program.name}" loading="lazy" onerror="this.onerror=null;this.src='img/fallback.png';">
       <h3>${program.name}</h3>
       <p><strong>Категория:</strong> ${program.category}</p>
       <p><strong>Описание:</strong> ${program.description}</p>
