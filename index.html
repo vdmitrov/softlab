@@ -1,53 +1,85 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoftLab - Главная</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mobile.css" media="only screen and (max-width: 768px)">
-    <script defer src="script.js"></script>
-</head>
-<body>
-    <header>
-        <input type="text" id="search" placeholder="Поиск программ..." oninput="searchPrograms()">
-        <div class="hamburger" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </header>
+/* Общие стили для страницы */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
 
-    <div class="container">
-        <nav class="menu">
-            <ul>
-                <li><a href="windows.html"><img src="img/windows.png" alt="Windows"> Windows</a></li>
-                <li><a href="linux.html"><img src="img/linux.png" alt="Linux"> Linux</a></li>
-                <li><a href="android.html"><img src="img/android.png" alt="Android"> Android</a></li>
-            </ul>
-        </nav>
-    </div>
+/* Стили меню */
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative; /* Для корректного позиционирования поиска */
+}
 
-    <div id="program-list" class="program-list"></div>
+.menu ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
 
-    <script>
-        function toggleMenu() {
-            const menu = document.querySelector(".menu");
-            menu.classList.toggle("open");
-        }
+.menu ul li {
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+}
 
-        window.onload = function() {
-            const currentPage = window.location.pathname;
-            if (currentPage.includes("android.html")) {
-                displayProgramsByCategory(["Android"]);
-            } else if (currentPage.includes("linux.html")) {
-                displayProgramsByCategory(["Linux"]);
-            } else if (currentPage.includes("windows.html")) {
-                displayProgramsByCategory(["Windows"]);
-            } else {
-                displayProgramsByCategory(["Windows", "Android", "Linux"]);
-            }
-        };
-    </script>
-</body>
-</html>
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.menu ul li img {
+    width: 20px;
+    height: auto;
+    margin-right: 8px;
+}
+
+/* Поиск в меню категорий */
+#search {
+    margin-left: 20px;
+    padding: 5px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    width: 150px;
+}
+
+/* Программные карточки */
+.program-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));  /* Ещё больше уменьшена минимальная ширина */
+    gap: 15px;
+    padding: 20px;
+}
+
+.program {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    max-width: 160px;  /* Ещё меньше максимальная ширина карточек */
+    margin: 0 auto;
+    height: auto;
+}
+
+.program img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.program:hover {
+    transform: scale(1.05);
+}
