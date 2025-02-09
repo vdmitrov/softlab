@@ -32,33 +32,33 @@ nav ul {
     list-style: none;
     padding: 0;
     display: flex;
-    justify-content: center; /* Центрируем */
+    justify-content: center;
     gap: 40px; /* Расстояние между пунктами */
 }
 
 nav li {
     display: flex;
-    flex-direction: column; /* Делаем столбик */
-    align-items: center; /* Выравниваем центр */
+    flex-direction: column; /* Размещаем элементы в колонку */
+    align-items: center; /* Выравниваем по центру */
     text-align: center;
-    min-width: 100px; /* Фиксируем ширину для выравнивания */
+    width: 120px; /* Фиксированная ширина для всех элементов */
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
     display: flex;
-    flex-direction: column; /* Иконка сверху, текст снизу */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8px; /* Отступ между иконкой и текстом */
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
 }
 
 nav img {
     width: 40px;
     height: 40px;
     display: block;
+    margin-bottom: 5px; /* Добавляем отступ вниз */
 }
 
 /* Список программ */
@@ -80,13 +80,22 @@ main {
 }
 
 .program img {
-    width: 100px;
-    height: 100px;
+    width: 80px; /* Сделал чуть меньше, чтобы текст не сдвигался */
+    height: 80px;
     object-fit: contain;
+    display: block;
+    margin: 0 auto 10px auto;
 }
 
 .program h3 {
     font-size: 18px;
+    margin: 0 0 5px 0;
+}
+
+.program p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
 }
 
 .program button {
@@ -96,6 +105,7 @@ main {
     border: none;
     cursor: pointer;
     width: 100%;
+    font-size: 16px;
 }
 
 .program button:hover {
