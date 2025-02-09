@@ -51,4 +51,54 @@ const programs = [
     },
     { 
         name: "Spotify", 
-        category: "Windo
+        category: "Windows", 
+        img: "img/spotify.png", 
+        link: "#", 
+        description: "Сервис для стриминга музыки с огромной библиотекой." 
+    },
+    { 
+        name: "Instagram", 
+        category: "Android", 
+        img: "img/instagram.png", 
+        link: "#", 
+        description: "Популярная социальная сеть для обмена фотографиями и видео." 
+    },
+    { 
+        name: "Skype", 
+        category: "Windows", 
+        img: "img/skype.png", 
+        link: "#", 
+        description: "Программа для видеозвонков и обмена сообщениями." 
+    }
+];
+
+// Функция для загрузки программ
+function loadPrograms() {
+    const programList = document.getElementById("program-list");
+    console.log("Загружаем программы...");
+
+    if (!programList) {
+        console.error("Контейнер для программ не найден!");
+        return;
+    }
+
+    programs.forEach(program => {
+        console.log("Создаем карточку:", program.name);
+
+        const programCard = document.createElement("div");
+        programCard.classList.add("program");
+
+        programCard.innerHTML = `
+            <img src="${program.img}" alt="${program.name}">
+            <h3>${program.name}</h3>
+            <p><strong>Категория:</strong> ${program.category}</p>
+            <p><strong>Описание:</strong> ${program.description}</p>
+            <a href="${program.link}" target="_blank"><button>Перейти на сайт</button></a>
+        `;
+
+        programList.appendChild(programCard);
+    });
+}
+
+// Вызовем функцию, чтобы загрузить программы при загрузке страницы
+window.onload = loadPrograms;
