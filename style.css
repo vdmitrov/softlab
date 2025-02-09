@@ -14,6 +14,7 @@ body {
     background-color: #333;
     padding: 10px;
     border-radius: 5px;
+    position: relative; /* Для корректного позиционирования поиска */
 }
 
 .menu ul {
@@ -26,7 +27,7 @@ body {
 .menu ul li {
     margin: 0 15px;
     display: flex;
-    align-items: center;  /* Выравнивание по вертикали */
+    align-items: center;
 }
 
 .menu ul li a {
@@ -34,19 +35,31 @@ body {
     text-decoration: none;
     font-size: 16px;
     display: flex;
-    align-items: center;  /* Выравнивание иконки с текстом */
+    align-items: center;
 }
 
 .menu ul li img {
-    width: 20px; /* Устанавливаем фиксированную ширину для иконок */
+    width: 20px;
     height: auto;
-    margin-right: 8px; /* Отступ между иконкой и текстом */
+    margin-right: 8px;
+}
+
+/* Поиск в меню */
+#search {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    padding: 5px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    width: 150px;
 }
 
 /* Программные карточки */
 .program-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));  /* Значительно уменьшаем минимальную ширину */
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));  /* Ещё больше уменьшена минимальная ширина */
     gap: 15px;
     padding: 20px;
 }
@@ -58,9 +71,9 @@ body {
     padding: 10px;
     text-align: center;
     transition: transform 0.3s ease;
-    max-width: 180px;  /* Устанавливаем ограничение по ширине */
+    max-width: 160px;  /* Ещё меньше максимальная ширина карточек */
     margin: 0 auto;
-    height: auto;  /* Убираем фиксированную высоту */
+    height: auto;
 }
 
 .program img {
