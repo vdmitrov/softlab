@@ -76,12 +76,11 @@ header h1 {
 .program-list {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: flex-start; /* Карточки будут начинаться слева */
     gap: 20px;
     padding: 20px;
+    justify-content: space-between; /* Разделение карточек равномерно */
     max-width: 1200px;
-    margin: 0; /* Убрали автоматическое центрирование */
+    margin: 0 auto; /* Центрирование */
 }
 
 /* ===== PROGRAM CARD ===== */
@@ -91,8 +90,8 @@ header h1 {
     text-align: center;
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    width: 220px; /* Ширина карточки */
-    flex-grow: 0; /* Запрещаем карточкам растягиваться */
+    width: calc(33.333% - 20px); /* Равномерная ширина для трех карточек в строке */
+    box-sizing: border-box; /* Учитываем отступы в ширине */
 }
 
 .program img {
