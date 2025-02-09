@@ -33,6 +33,32 @@
     <div id="program-list" class="program-list"></div>
 
     <script>
+        // Функция отображения программ по категориям
+        function displayProgramsByCategory(categories) {
+            const programList = document.getElementById("program-list");
+            if (!programList) return;
+
+            // Очистка списка перед добавлением новых программ
+            programList.innerHTML = "";
+
+            // Фильтрация программ по категориям
+            const filteredPrograms = programs.filter(program => categories.includes(program.category));
+
+            // Отображение отфильтрованных программ
+            filteredPrograms.forEach(program => {
+                const programCard = document.createElement("div");
+                programCard.classList.add("program");
+                programCard.innerHTML = `
+                    <img src="${program.img}" alt="${program.name}">
+                    <h3>${program.name}</h3>
+                    <p><strong>Категория:</strong> ${program.category}</p>
+                    <p><strong>Описание:</strong> ${program.description}</p>
+                    <a href="${program.link}" target="_blank"><button>Скачать</button></a>
+                `;
+                programList.appendChild(programCard);
+            });
+        }
+
         // Отображаем программы для Windows
         window.onload = function() {
             displayProgramsByCategory(["Windows"]);
