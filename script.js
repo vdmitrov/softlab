@@ -16,7 +16,7 @@ const programs = [
     { 
         name: "WinRAR", 
         category: "Windows", 
-        img: "img/winrar.png", 
+        img: "img/Winrar.png", 
         link: "#", 
         description: "Архиватор файлов с высокой степенью сжатия."
     },
