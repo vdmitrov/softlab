@@ -108,6 +108,8 @@ window.onload = function() {
         displayProgramsByCategory("Windows");
     } else {
         // Отображаем все программы на главной странице
-        displayProgramsByCategory("Windows"); // Или добавьте условие для других категорий
+        displayProgramsByCategory("Windows");
+        displayProgramsByCategory("Android");
+        displayProgramsByCategory("Linux");
     }
 };
