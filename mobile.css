@@ -1,0 +1,72 @@
+/* mobile.css */
+
+/* ===== Мобильные стили (для экранов до 768px) ===== */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 18px;
+    }
+
+    .menu {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .menu ul {
+        display: block;
+    }
+
+    .menu ul li {
+        margin: 5px 0;
+    }
+
+    .program-list {
+        padding: 10px;
+    }
+
+    .program {
+        padding: 8px;
+    }
+
+    .program img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .program h3 {
+        font-size: 14px;
+    }
+
+    .program p {
+        font-size: 12px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+/* ===== Очень маленькие экраны (для телефонов) ===== */
+@media screen and (max-width: 480px) {
+    .program {
+        padding: 5px;
+    }
+
+    .program img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .program h3 {
+        font-size: 14px;
+    }
+
+    .program p {
+        font-size: 12px;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
