@@ -34,14 +34,7 @@ const programs = [
         link: "#", 
         description: "Один из самых популярных мессенджеров в мире. "
     }
-  { 
-        name: "Google Chrome", 
-        category: "Windows", 
-        img: "img/chrome.png", 
-        link: "#", 
-        description: "Быстрый и удобный веб-браузер от Google. "
-    },
-    { 
+
 
 
 ];
