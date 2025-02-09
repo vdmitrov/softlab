@@ -2,7 +2,7 @@ const programs = [
     { 
         name: "Google Chrome", 
         category: "Windows", 
-        img: "img/chrome.png", 
+        img: "img/Chrome.png", 
         link: "#", 
         description: "Быстрый и удобный веб-браузер от Google."
     },
