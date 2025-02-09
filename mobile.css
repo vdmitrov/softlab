@@ -9,26 +9,72 @@ body {
 
 /* Настройки для мобильных устройств */
 @media only screen and (max-width: 768px) {
-    /* Для общего контейнера */
-    .program-list {
+    /* Настройки для header */
+    header {
+        flex-direction: column; /* Меняем направление на вертикальное */
+        align-items: center; /* Выравниваем по центру */
+        padding: 15px;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 20px;
+        margin: 10px 0;
+        width: 100%; /* Заголовок занимает всю ширину */
+    }
+
+    /* Настройки для .menu */
+    .menu {
+        width: 100%; /* Меню растягиваем на всю ширину */
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu ul {
         display: flex;
-        flex-direction: column; /* Вертикальное выравнивание карточек */
-        align-items: center;
-        max-width: 100%;
+        justify-content: space-around; /* Элементы меню по бокам */
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu ul li {
+        margin: 0;
+    }
+
+    .menu ul li a {
+        font-size: 16px;
         padding: 10px;
-        overflow-y: auto; /* Прокрутка */
-        height: 100vh; /* Высота по высоте экрана */
+        display: inline-block;
+        width: 100%; /* Делает ссылки в меню растягиваемыми */
+        text-align: center;
+    }
+
+    .menu ul li a:hover {
+        background-color: #555;
+        border-radius: 5px;
     }
 
     /* Для карточек */
+    .program-list {
+        display: flex;
+        flex-direction: column; /* Карточки одна под другой */
+        align-items: center;
+        padding: 10px;
+        width: 100%;
+        margin: 0 auto;
+        overflow-y: auto; /* Прокрутка при необходимости */
+    }
+
     .program {
         background-color: white;
         padding: 15px;
         text-align: center;
         border-radius: 8px;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        width: 80%; /* Делает карточку уже, чем на больших экранах */
+        width: 90%; /* Карточки занимают 90% ширины */
         margin: 10px 0; /* Отступы между карточками */
+        box-sizing: border-box; /* Чтобы отступы не влияли на ширину */
     }
 
     .program img {
@@ -36,11 +82,15 @@ body {
         height: 60px;
     }
 
-    /* Для заголовка */
-    header h1 {
-        font-size: 20px;
-        margin: 0;
-        text-align: center;
+    .program h3 {
+        margin: 10px 0 5px;
+        font-size: 18px;
+    }
+
+    .program p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #444;
     }
 
     /* Кнопки */
