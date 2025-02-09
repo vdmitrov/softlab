@@ -4,35 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SoftLab</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>SoftLab</h1>
-        <input type="text" placeholder="Поиск программ...">
-    </header>
 
-    <nav>
-        <ul>
-            <li>
-                <a href="windows.html">
-                    <img src="./img/windows.png" alt="Windows">
-                    <span>Для Windows</span>
-                </a>
-            </li>
-            <li>
-                <a href="linux.html">
-                    <img src="./img/linux.png" alt="Linux">
-                    <span>Для Linux</span>
-                </a>
-            </li>
-            <li>
-                <a href="android.html">
-                    <img src="./img/android.png" alt="Android">
-                    <span>Для Android</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
+<header>
+    <h1>SoftLab</h1>
+    <input type="text" id="search" placeholder="🔍 Поиск программ..." oninput="searchPrograms()">
+</header>
+
+<nav>
+    <ul>
+        <li><a href="windows.html"><img src="img/windows.png" alt="Windows"> Для Windows</a></li>
+        <li><a href="linux.html"><img src="img/linux.png" alt="Linux"> Для Linux</a></li>
+        <li><a href="android.html"><img src="img/android.png" alt="Android"> Для Android</a></li>
+    </ul>
+</nav>
+
+<div id="program-list"></div>
+
+<script src="script.js"></script>
 </body>
 </html>
