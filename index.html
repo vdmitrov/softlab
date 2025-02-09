@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0;url=windows.html"> <!-- Редирект на windows.html через 2 секунды -->
     <title>SoftLab</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
@@ -27,3 +26,13 @@
     <div id="program-list" class="program-list"></div>
 
     <script>
+        // Функция для отображения всех программ
+        function displayPrograms() {
+            const programList = document.getElementById("program-list");
+            programList.innerHTML = ''; // Очистить список программ, если что-то есть
+
+            programs.forEach(program => {
+                const programCard = document.createElement("div");
+                programCard.classList.add("program");
+
+                progra
