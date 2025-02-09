@@ -1,78 +1,101 @@
-/* Мобильные стили */
 @media (max-width: 768px) {
-    .menu {
-        display: none;
-        width: 100%;
-        background-color: #333;
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        justify-content: flex-start;
-        align-items: flex-start;
-        flex-direction: column;
-        padding-top: 50px;
-    }
-
-    .menu.open {
-        display: flex;
-    }
-
-    .menu ul {
-        flex-direction: column;
-        width: 100%;
-        padding-left: 0;
-    }
-
-    .menu ul li {
-        margin: 20px 0;
-        text-align: center;
-        width: 100%;
-    }
-
-    .hamburger {
-        display: flex;
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        flex-direction: column;
-        width: 25px;
-        height: 25px;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
-    }
-
-    .hamburger div {
-        background-color: #fff;
-        height: 4px;
-        width: 100%;
-    }
-
-    .program-list {
-        margin-top: 80px;
-        padding: 10px;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 20px;
-    }
-
-    .program {
-        background-color: #f1f1f1;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        padding: 15px;
-        text-align: center;
-        transition: transform 0.3s ease;
-    }
-
-    .program img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 5px;
-    }
-
-    .program:hover {
-        transform: scale(1.05);
-    }
+  /* Скрываем основное меню на мобильных устройствах */
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 10px 0;
+  }
+  
+  /* Когда меню открыто, оно отображается */
+  .menu.open {
+    display: flex;
+  }
+  
+  /* Меню — список категорий */
+  .menu ul {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .menu ul li {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .menu ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .menu ul li a img {
+    width: 36px;    /* Иконки: 36x36 пикселей */
+    height: 36px;
+    margin-right: 8px;
+  }
+  
+  /* Поле поиска внутри меню */
+  .menu input[type="text"] {
+    position: static;
+    width: 90%;
+    margin: 10px auto;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    box-sizing: border-box;
+    display: block;
+  }
+  
+  /* Кнопка гамбургера (три полоски) */
+  .hamburger {
+    display: flex;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 1100;
+  }
+  
+  .hamburger div {
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    margin: 2px 0;
+  }
+  
+  /* Карточки программ — вывод в одну колонку */
+  .program-list {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px;
+    margin-top: 80px;  /* Отступ, чтобы не перекрывалось меню */
+  }
+  
+  /* Опционально: уменьшаем размеры карточек для мобильных */
+  .program {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 8px;
+  }
 }
