@@ -12,13 +12,13 @@
     z-index: 1000;
     padding: 20px 10px;
   }
-
-  /* Когда меню открыто (класс .open) */
+  
+  /* При наличии класса .open меню отображается */
   .menu.open {
     display: flex;
   }
-
-  /* Список категорий */
+  
+  /* Список категорий в меню: вертикальное выравнивание и центрирование */
   .menu ul {
     width: 100%;
     margin: 0;
@@ -27,17 +27,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
-
+  
   .menu ul li {
     margin: 10px 0;
-    width: 100%;
-    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-
+  
   .menu ul li a {
     display: flex;
     align-items: center;
@@ -46,26 +45,26 @@
     text-decoration: none;
     font-size: 18px;
   }
-
+  
   .menu ul li a img {
-    width: 36px;    /* Иконки 36x36 пикселей */
+    width: 36px;    /* Размер иконки: 36x36 пикселей */
     height: 36px;
     margin-right: 8px;
   }
-
-  /* Поиск внутри меню */
+  
+  /* Поле поиска внутри меню — располагается под списком категорий */
   .menu input[type="text"] {
     width: 90%;
     padding: 8px 12px;
-    font-size: 14px;
+    font-size: 16px;
     border: none;
     border-radius: 5px;
     margin-top: 15px;
     box-sizing: border-box;
     display: block;
   }
-
-  /* Кнопка гамбургера: располагается в правом верхнем углу */
+  
+  /* Кнопка гамбургера (три полоски) — всегда видна в правом верхнем углу */
   .hamburger {
     display: flex;
     position: fixed;
@@ -79,23 +78,24 @@
     cursor: pointer;
     z-index: 1100;
   }
-
+  
   .hamburger div {
     width: 100%;
     height: 4px;
     background-color: #fff;
     margin: 2px 0;
   }
-
+  
   /* Карточки программ: выводятся в одну колонку */
   .program-list {
     display: grid;
     grid-template-columns: 1fr;
     gap: 15px;
     padding: 15px;
-    margin-top: 140px; /* Отступ сверху, чтобы меню не перекрывало контент */
+    margin-top: 140px; /* Отступ сверху, чтобы меню (если открыто) не перекрывало контент */
   }
-
+  
+  /* Дополнительное уменьшение карточек */
   .program {
     max-width: 90%;
     margin: 0 auto;
