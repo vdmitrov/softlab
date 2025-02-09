@@ -33,6 +33,23 @@ body {
     font-size: 16px;
 }
 
+/* Стили для поля поиска */
+header {
+    padding: 15px;
+    background-color: #444;
+    color: white;
+    text-align: center;
+}
+
+header input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
 /* Программные карточки */
 .program-list {
     display: grid;
@@ -54,6 +71,31 @@ body {
     max-width: 100%;
     height: auto;
     border-radius: 5px;
+}
+
+.program h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.program p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.program button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.program button:hover {
+    background-color: #218838;
 }
 
 .program:hover {
