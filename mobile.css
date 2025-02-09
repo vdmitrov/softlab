@@ -1,33 +1,36 @@
 @media (max-width: 768px) {
-  /* Скрываем основное меню на мобильных устройствах */
+  /* Мобильное меню */
   .menu {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    background-color: #333;
-    width: 100%;
+    display: none;              /* Скрываем меню по умолчанию */
     position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
+    background-color: #333;
+    flex-direction: column;
+    align-items: center;
     z-index: 1000;
-    padding: 10px 0;
+    padding: 15px 10px;
   }
   
-  /* Когда меню открыто, оно отображается */
+  /* Когда меню открыто, отображаем его */
   .menu.open {
     display: flex;
   }
   
-  /* Меню — список категорий */
+  /* Список категорий в меню */
   .menu ul {
-    flex-direction: column;
     width: 100%;
-    margin: 0;
     padding: 0;
-    text-align: center;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .menu ul li {
+    width: 100%;
+    text-align: center;
     margin: 10px 0;
     display: flex;
     justify-content: center;
@@ -40,29 +43,27 @@
     justify-content: center;
     color: white;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
   }
   
   .menu ul li a img {
-    width: 36px;    /* Иконки: 36x36 пикселей */
+    width: 36px;    /* Размер иконки: 36px */
     height: 36px;
     margin-right: 8px;
   }
   
-  /* Поле поиска внутри меню */
+  /* Поле поиска внутри меню (размещается под списком) */
   .menu input[type="text"] {
-    position: static;
     width: 90%;
-    margin: 10px auto;
-    padding: 8px 12px;
-    font-size: 14px;
-    border-radius: 5px;
+    padding: 8px;
+    font-size: 16px;
     border: none;
+    border-radius: 5px;
+    margin-top: 10px;
     box-sizing: border-box;
-    display: block;
   }
   
-  /* Кнопка гамбургера (три полоски) */
+  /* Кнопка гамбургера */
   .hamburger {
     display: flex;
     position: fixed;
@@ -84,15 +85,16 @@
     margin: 2px 0;
   }
   
-  /* Карточки программ — вывод в одну колонку */
+  /* Карточки программ: вывод в одну колонку */
   .program-list {
+    display: grid;
     grid-template-columns: 1fr;
     gap: 15px;
     padding: 15px;
-    margin-top: 80px;  /* Отступ, чтобы не перекрывалось меню */
+    margin-top: 140px; /* Отступ сверху, чтобы меню (если открыто) не перекрывало контент */
   }
   
-  /* Опционально: уменьшаем размеры карточек для мобильных */
+  /* Карточки — уменьшаем их размеры */
   .program {
     max-width: 90%;
     margin: 0 auto;
