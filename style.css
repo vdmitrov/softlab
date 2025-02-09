@@ -9,27 +9,25 @@ body {
 /* Стили меню */
 .menu {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background-color: #333;
-    padding: 10px 20px;
+    padding: 10px;
     border-radius: 5px;
-    position: relative; /* Для абсолютного позиционирования поиска */
+    position: relative;
 }
 
 .menu ul {
     list-style: none;
     display: flex;
-    justify-content: center; /* Центрируем меню */
     margin: 0;
     padding: 0;
-    width: 100%; /* Убедимся, что меню занимает всю ширину */
 }
 
 .menu ul li {
     margin: 0 15px;
     display: flex;
-    align-items: center; /* Выравнивание иконки и текста по вертикали */
+    align-items: center;
 }
 
 .menu ul li a {
@@ -37,11 +35,11 @@ body {
     text-decoration: none;
     font-size: 16px;
     display: flex;
-    align-items: center; /* Центрируем текст и иконку */
+    align-items: center;
 }
 
 .menu ul li a img {
-    margin-right: 8px; /* Отступ между иконкой и текстом */
+    margin-right: 8px;
     width: 32px; /* Устанавливаем размер иконки */
     height: 32px; /* Устанавливаем размер иконки */
 }
@@ -53,9 +51,9 @@ body {
     border-radius: 5px;
     border: none;
     position: absolute;
-    right: 20px; /* Позиционируем справа */
+    right: 20px;
     top: 50%;
-    transform: translateY(-50%); /* Центрируем по вертикали */
+    transform: translateY(-50%);
     width: 180px;
     box-sizing: border-box;
 }
@@ -63,7 +61,7 @@ body {
 /* Программные карточки */
 .program-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Уменьшаем минимальный размер карточек */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Уменьшаем минимальный размер карточек */
     gap: 20px;
     padding: 20px;
 }
@@ -75,8 +73,7 @@ body {
     padding: 15px;
     text-align: center;
     transition: transform 0.3s ease;
-    max-width: 100%; /* Ограничиваем ширину */
-    height: 300px; /* Ограничиваем высоту карточки */
+    height: 250px; /* Ограничиваем высоту карточек */
 }
 
 .program img {
