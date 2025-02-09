@@ -18,7 +18,7 @@
         height: 25px;
         position: absolute;
         top: 10px;
-        left: 10px; /* Перемещаем влево */
+        right: 10px; /* Перемещаем кнопку гамбургера вправо */
         z-index: 999;
     }
 
@@ -34,12 +34,12 @@
         display: block;
         position: fixed;
         top: 0;
-        left: 0; /* Сдвигаем меню влево */
+        right: 0; /* Меню будет справа */
         width: 250px; /* Ширина меню */
         background-color: #333;
         padding: 20px;
         height: 100%;
-        border-radius: 0 10px 10px 0; /* Скругленные правые углы */
+        border-radius: 0 10px 10px 0; /* Скругляем левый верхний и левый нижний углы */
     }
 
     /* Элементы меню */
