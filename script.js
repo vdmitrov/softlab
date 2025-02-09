@@ -4,7 +4,7 @@ const programs = [
         category: "Windows", 
         img: "img/chrome.png", 
         link: "#", 
-        description: "Быстрый и удобный веб-браузер от Google."
+        description: "Быстрый и удобный веб-браузер от Google. "
     },
     { 
         name: "VLC Media Player", 
@@ -18,21 +18,21 @@ const programs = [
         category: "Windows", 
         img: "img/Winrar.png", 
         link: "#", 
-        description: "Архиватор файлов с высокой степенью сжатия."
+        description: "Архиватор файлов с высокой степенью сжатия. "
     },
     { 
         name: "Telegram", 
         category: "Android", 
         img: "img/Telegram.png", 
         link: "#", 
-        description: "Быстрый и безопасный мессенджер."
+        description: "Быстрый и безопасный мессенджер. "
     },
     { 
         name: "WhatsApp", 
         category: "Android", 
         img: "img/whatsapp.png", 
         link: "#", 
-        description: "Один из самых популярных мессенджеров в мире."
+        description: "Один из самых популярных мессенджеров в мире. "
     }
 ];
 
