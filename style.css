@@ -63,16 +63,16 @@ body {
 /* Программные карточки */
 .program-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); /* Минимальная ширина карточки — 170px */
-  gap: 10px;  /* Уменьшаем промежуток между карточками */
-  padding: 15px; /* Уменьшаем padding контейнера */
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Минимальная ширина карточки – 150px */
+  gap: 8px;  /* Уменьшенный промежуток между карточками */
+  padding: 10px; /* Уменьшенный отступ контейнера */
 }
 
 .program {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 10px;
-  padding: 8px;  /* Уменьшенный внутренний отступ */
+  padding: 6px;  /* Уменьшенные внутренние отступы */
   text-align: center;
   transition: transform 0.3s ease;
   overflow: hidden;
@@ -85,31 +85,31 @@ body {
   width: 100%;
   height: auto;
   border-radius: 5px;
-  margin-bottom: 6px; /* Уменьшаем отступ между изображением и текстом */
+  margin-bottom: 4px; /* Уменьшенный отступ между изображением и текстом */
 }
 
 .program h3 {
-  font-size: 13px; /* Немного уменьшенный размер шрифта заголовка */
+  font-size: 12px; /* Уменьшенный размер заголовка */
   margin: 6px 0 3px;
   color: #333;
 }
 
 .program p {
-  font-size: 11px; /* Уменьшенный размер шрифта описания */
+  font-size: 10px; /* Уменьшенный размер описания */
   color: #555;
   margin: 3px 0;
   line-height: 1.2;
 }
 
 .program button {
-  padding: 5px 8px; /* Уменьшенный padding для кнопки */
-  font-size: 11px;  /* Уменьшенный размер шрифта кнопки */
+  padding: 4px 8px; /* Уменьшенный отступ для кнопки */
+  font-size: 10px;  /* Уменьшенный размер шрифта кнопки */
   background-color: #28a745;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 6px;
+  margin-top: 4px;
 }
 
 .program button:hover {
