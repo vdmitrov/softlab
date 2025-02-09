@@ -25,12 +25,20 @@ body {
 
 .menu ul li {
     margin: 0 15px;
+    display: flex;
+    align-items: center;  /* Выравниваем текст и иконки по вертикали */
 }
 
 .menu ul li a {
     color: white;
     text-decoration: none;
     font-size: 16px;
+    display: flex;
+    align-items: center;  /* Выравниваем иконку и текст по вертикали */
+}
+
+.menu ul li img {
+    margin-right: 10px; /* Добавляем отступ справа от иконки */
 }
 
 /* Программные карточки */
