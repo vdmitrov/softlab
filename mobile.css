@@ -1,116 +1,86 @@
-/* Для мобильных устройств */
+/* Общие стили для меню */
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    margin: 0 15px;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.menu.open {
+    display: block;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    width: 25px;
+    height: 25px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hamburger div {
+    background-color: #fff;
+    height: 4px;
+    width: 100%;
+}
+
+/* Мобильные стили */
 @media (max-width: 768px) {
-    /* Скрываем основное меню */
     .menu {
-        display: none; /* Скрываем меню по умолчанию */
-    }
-
-    /* Кнопка гамбургера */
-    .hamburger {
-        display: block;
-        cursor: pointer;
-        padding: 10px;
-        margin: 10px;
-        background-color: #333;
-        color: white;
-        border-radius: 5px;
-        width: 30px;
-        height: 25px;
-        position: absolute;
-        top: 10px;
-        right: 10px; /* Перемещаем кнопку гамбургера вправо */
-        z-index: 999;
-    }
-
-    .hamburger div {
+        display: none;
         width: 100%;
-        height: 4px;
-        background-color: white;
-        margin: 5px 0;
-    }
-
-    /* Открытие меню */
-    .menu.open {
-        display: block;
+        background-color: #333;
         position: fixed;
         top: 0;
-        right: 0; /* Меню будет справа */
-        width: 250px; /* Ширина меню */
-        background-color: #333;
-        padding: 20px;
+        left: 0;
         height: 100%;
-        border-radius: 0 10px 10px 0; /* Скругляем левый верхний и левый нижний углы */
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        padding-top: 50px; /* Чтобы меню не перекрывало верхнюю панель */
     }
 
-    /* Элементы меню */
+    .menu.open {
+        display: flex;
+    }
+
     .menu ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .menu li {
-        text-align: left;
-        margin: 15px 0;
-    }
-
-    .menu a {
-        color: white;
-        text-decoration: none;
-        font-size: 1.2em;
-    }
-
-    /* Карточки */
-    #program-list {
-        display: flex;
         flex-direction: column;
-        align-items: center;
-    }
-
-    .program {
-        width: 90%;
-        max-width: 350px;
-        margin: 10px 0;
-        background-color: #fff;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .program img {
         width: 100%;
-        height: 200px;
-        object-fit: cover;
+        padding-left: 0;
     }
 
-    .program-title {
-        padding: 10px;
-        font-size: 1.1em;
-        font-weight: bold;
+    .menu ul li {
+        margin: 20px 0;
         text-align: center;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        width: 100%;
     }
 
-    .program-description {
-        padding: 10px;
-        font-size: 0.9em;
-        color: #555;
-        text-align: justify;
-        flex-grow: 1;
-    }
-
-    /* Поиск */
-    header input[type="text"] {
-        width: 80%;
-        padding: 10px;
-        font-size: 1em;
-        margin: 10px auto;
-        display: block;
-        border-radius: 5px;
-        border: 1px solid #ccc;
+    .hamburger {
+        display: flex;
+        position: absolute;
+        top: 15px;
+        right: 15px;
     }
 }
