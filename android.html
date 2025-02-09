@@ -4,20 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Android - SoftLab</title>
-
-    <!-- Подключаем основной CSS файл -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- Подключаем мобильный CSS файл -->
     <link rel="stylesheet" href="mobile.css" media="only screen and (max-width: 768px)">
-
-    <!-- Подключаем основной скрипт -->
     <script defer src="script.js"></script>
 </head>
-
 <body>
     <header>
         <input type="text" id="search" placeholder="Поиск программ..." oninput="searchPrograms()">
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </header>
 
     <div class="container">
@@ -33,57 +31,6 @@
     <div id="program-list" class="program-list"></div>
 
     <script>
-        // Функция для отображения программ по категориям
-        function displayProgramsByCategory(categories) {
-            const programs = [
-                { 
-                    name: "Google Chrome", 
-                    category: "Android", 
-                    img: "img/chrome.png", 
-                    link: "#", 
-                    description: "Быстрый браузер с поддержкой всех современных стандартов." 
-                },
-                { 
-                    name: "Telegram", 
-                    category: "Android", 
-                    img: "img/Telegram.png", 
-                    link: "#", 
-                    description: "Безопасный мессенджер с поддержкой чатов и звонков." 
-                },
-                { 
-                    name: "WhatsApp", 
-                    category: "Android", 
-                    img: "img/whatsapp.png", 
-                    link: "#", 
-                    description: "Популярный мессенджер для обмена сообщениями и звонков." 
-                }
-            ];
-
-            const programList = document.getElementById("program-list");
-            if (!programList) return;
-
-            // Очистка списка перед добавлением новых программ
-            programList.innerHTML = "";
-
-            // Фильтрация программ по категориям
-            const filteredPrograms = programs.filter(program => categories.includes(program.category));
-
-            // Отображение отфильтрованных программ
-            filteredPrograms.forEach(program => {
-                const programCard = document.createElement("div");
-                programCard.classList.add("program");
-                programCard.innerHTML = `
-                    <img src="${program.img}" alt="${program.name}">
-                    <h3>${program.name}</h3>
-                    <p><strong>Категория:</strong> ${program.category}</p>
-                    <p><strong>Описание:</strong> ${program.description}</p>
-                    <a href="${program.link}" target="_blank"><button>Скачать</button></a>
-                `;
-                programList.appendChild(programCard);
-            });
-        }
-
-        // Отображаем программы для Android при загрузке страницы
         window.onload = function() {
             displayProgramsByCategory(["Android"]);
         };
