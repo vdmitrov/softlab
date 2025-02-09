@@ -44,7 +44,7 @@ const programs = [
   { 
     name: "Firefox", 
     category: "Windows", 
-    img: "img/firefox.png", 
+    img: "img/firefoxs.png", 
     link: "#", 
     description: "Открытый браузер с высоким уровнем безопасности." 
   },
