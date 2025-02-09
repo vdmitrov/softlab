@@ -37,7 +37,7 @@ const programs = [
   { 
     name: "Notepad++", 
     category: "Windows", 
-    img: "img/notepad++.png", 
+    img: "img/not.png", 
     link: "#", 
     description: "Мощный текстовый редактор для программистов." 
   },
@@ -48,13 +48,7 @@ const programs = [
     link: "#", 
     description: "Открытый браузер с высоким уровнем безопасности." 
   },
-  { 
-    name: "Spotify", 
-    category: "Windows", 
-    img: "img/spotify.png", 
-    link: "#", 
-    description: "Сервис для стриминга музыки с огромной библиотекой." 
-  },
+
   { 
     name: "Instagram", 
     category: "Android", 
@@ -62,13 +56,7 @@ const programs = [
     link: "#", 
     description: "Популярная социальная сеть для обмена фотографиями и видео." 
   },
-  { 
-    name: "Skype", 
-    category: "Windows", 
-    img: "img/skype.png", 
-    link: "#", 
-    description: "Программа для видеозвонков и обмена сообщениями." 
-  }
+
 ];
 
 /**
