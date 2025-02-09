@@ -73,27 +73,25 @@ body {
     padding: 15px;
     text-align: center;
     transition: transform 0.3s ease;
-    height: 250px; /* Ограничиваем высоту карточек */
+    height: auto; /* Автоматическая высота */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start; /* Размещаем содержимое сверху */
+    overflow: hidden; /* Если что-то выходит за пределы, скрываем */
 }
 
 .program img {
     max-width: 100%;
     height: auto;
     border-radius: 5px;
-    margin-bottom: 10px; /* Добавляем отступ для текста */
+    margin-bottom: 10px; /* Отступ для текста */
 }
 
 .program .text {
     font-size: 14px; /* Размер шрифта текста */
-    flex-grow: 1;
-    overflow: hidden;
-    text-overflow: ellipsis; /* Обрезаем текст, если он выходит за пределы */
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4; /* Максимум 4 строки текста */
+    margin-top: 10px;
+    text-align: center; /* Центрируем текст */
+    line-height: 1.5; /* Межстрочный интервал */
 }
 
 .program:hover {
