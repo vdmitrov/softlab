@@ -33,15 +33,14 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center; /* Центрируем элементы */
-    gap: 20px;
+    gap: 30px; /* Отступ между пунктами */
 }
 
 nav li {
     display: flex;
-    flex-direction: column; /* Ставим иконку сверху, текст снизу */
-    align-items: center; /* Центрируем элементы */
+    flex-direction: column; /* Делаем столбик (иконка сверху, текст снизу) */
+    align-items: center; /* Центрируем */
     text-align: center;
-    gap: 5px; /* Отступ между иконкой и текстом */
 }
 
 nav a {
@@ -51,11 +50,12 @@ nav a {
     display: flex;
     flex-direction: column; /* Иконка сверху, текст снизу */
     align-items: center;
+    gap: 5px; /* Отступ между иконкой и текстом */
 }
 
 nav img {
-    width: 32px;
-    height: 32px;
+    width: 48px; /* Увеличил для лучшего вида */
+    height: 48px;
 }
 
 /* Список программ */
