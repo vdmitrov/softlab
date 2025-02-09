@@ -4,20 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linux - SoftLab</title>
-
-    <!-- Подключаем основной CSS файл -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- Подключаем мобильный CSS файл -->
     <link rel="stylesheet" href="mobile.css" media="only screen and (max-width: 768px)">
-
-    <!-- Подключаем основной скрипт -->
     <script defer src="script.js"></script>
 </head>
-
 <body>
     <header>
         <input type="text" id="search" placeholder="Поиск программ..." oninput="searchPrograms()">
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </header>
 
     <div class="container">
@@ -33,7 +31,6 @@
     <div id="program-list" class="program-list"></div>
 
     <script>
-        // Отображаем программы для Linux
         window.onload = function() {
             displayProgramsByCategory(["Linux"]);
         };
