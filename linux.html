@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1>SoftLab</h1>
+        <h1><a href="index.html">SoftLab</a></h1>
         <input type="text" id="search" placeholder="Поиск программ..." oninput="searchPrograms()">
     </header>
 
@@ -26,7 +26,8 @@
     <div id="program-list" class="program-list"></div>
 
     <script>
-        loadPrograms("Linux");  // Загрузим программы для Linux
+        // Загружаем только программы категории Linux
+        displayProgramsByCategory("Linux");
     </script>
 </body>
 </html>
