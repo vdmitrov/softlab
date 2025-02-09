@@ -72,17 +72,22 @@ const programs = [
     }
 ];
 
-// Функция для загрузки программ
-function loadPrograms() {
+// Функция для загрузки программ по категории
+function loadPrograms(category) {
     const programList = document.getElementById("program-list");
-    console.log("Загружаем программы...");
+    console.log("Загружаем программы для категории:", category);
 
     if (!programList) {
         console.error("Контейнер для программ не найден!");
         return;
     }
 
-    programs.forEach(program => {
+    programList.innerHTML = ''; // Очистить список перед добавлением
+
+    // Фильтрация программ по категории
+    const filteredPrograms = programs.filter(program => category === "All" || program.category === category);
+
+    filteredPrograms.forEach(program => {
         console.log("Создаем карточку:", program.name);
 
         const programCard = document.createElement("div");
@@ -100,5 +105,15 @@ function loadPrograms() {
     });
 }
 
-// Вызовем функцию, чтобы загрузить программы при загрузке страницы
-window.onload = loadPrograms;
+// Получение категории из URL
+function getCategoryFromURL() {
+    const path = window.location.pathname;
+    const page = path.split("/").pop().split(".")[0]; // Извлекаем название страницы
+    return page.charAt(0).toUpperCase() + page.slice(1); // Возвращаем категорию с заглавной буквы
+}
+
+// Загружаем программы при загрузке страницы
+window.onload = () => {
+    const category = getCategoryFromURL();
+    loadPrograms(category);
+};
