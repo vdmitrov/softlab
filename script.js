@@ -87,4 +87,29 @@ function displayProgramsByCategory(categories) {
         const programCard = document.createElement("div");
         programCard.classList.add("program");
         programCard.innerHTML = `
-            <img src
+            <img src="${program.img}" alt="${program.name}">
+            <h3>${program.name}</h3>
+            <p><strong>Категория:</strong> ${program.category}</p>
+            <p><strong>Описание:</strong> ${program.description}</p>
+            <a href="${program.link}" target="_blank"><button>Скачать</button></a>
+        `;
+        programList.appendChild(programCard);
+    });
+}
+
+// Вызов функции при загрузке страницы
+window.onload = function() {
+    const currentPage = window.location.pathname;
+
+    // Проверяем, на какой странице мы находимся и отображаем соответствующие программы
+    if (currentPage.includes("android.html")) {
+        displayProgramsByCategory(["Android"]);
+    } else if (currentPage.includes("linux.html")) {
+        displayProgramsByCategory(["Linux"]);
+    } else if (currentPage.includes("windows.html")) {
+        displayProgramsByCategory(["Windows"]);
+    } else {
+        // На главной странице отображаем программы всех категорий
+        displayProgramsByCategory(["Windows", "Android", "Linux"]);
+    }
+};
