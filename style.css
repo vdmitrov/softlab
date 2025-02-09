@@ -31,25 +31,31 @@ nav {
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center; /* Центрируем элементы */
+    gap: 20px;
 }
 
 nav li {
-    display: inline-block;
-    margin: 0 15px;
+    display: flex;
+    flex-direction: column; /* Ставим иконку сверху, текст снизу */
+    align-items: center; /* Центрируем элементы */
+    text-align: center;
+    gap: 5px; /* Отступ между иконкой и текстом */
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     display: flex;
+    flex-direction: column; /* Иконка сверху, текст снизу */
     align-items: center;
 }
 
 nav img {
-    width: 32px;  /* Можно изменить на 64px */
+    width: 32px;
     height: 32px;
-    margin-right: 8px;
 }
 
 /* Список программ */
