@@ -1,72 +1,156 @@
-/* mobile.css */
+/* Обнуляем отступы и ширину */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* ===== Мобильные стили (для экранов до 768px) ===== */
-@media screen and (max-width: 768px) {
+/* Поддержка экрана маленьких телефонов (например, старые модели или компактные телефоны) */
+@media only screen and (max-width: 320px) {
+    body {
+        font-size: 14px;
+    }
+
     header h1 {
         font-size: 18px;
     }
 
-    .menu {
-        flex-direction: column;
-        padding: 10px;
-    }
-
     .menu ul {
-        display: block;
+        flex-direction: column;
+        align-items: center;
     }
 
     .menu ul li {
-        margin: 5px 0;
-    }
-
-    .program-list {
-        padding: 10px;
+        margin: 10px 0;
     }
 
     .program {
-        padding: 8px;
-    }
-
-    .program img {
-        width: 70px;
-        height: 70px;
-    }
-
-    .program h3 {
-        font-size: 14px;
-    }
-
-    .program p {
-        font-size: 12px;
-    }
-
-    button {
         width: 100%;
-        padding: 12px;
-    }
-}
-
-/* ===== Очень маленькие экраны (для телефонов) ===== */
-@media screen and (max-width: 480px) {
-    .program {
-        padding: 5px;
+        padding: 10px;
     }
 
     .program img {
         width: 60px;
         height: 60px;
     }
+}
 
-    .program h3 {
-        font-size: 14px;
-    }
-
-    .program p {
-        font-size: 12px;
-    }
-
-    button {
-        padding: 12px;
+/* Поддержка экрана стандартных телефонов (например, iPhone 5/6/7/8) */
+@media only screen and (max-width: 480px) {
+    body {
         font-size: 16px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu ul li {
+        margin: 10px 0;
+    }
+
+    .program {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .program img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* Поддержка экрана средних телефонов (например, iPhone X или Google Pixel) */
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu ul li {
+        margin: 12px 0;
+    }
+
+    .program {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .program img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Поддержка экрана больших телефонов и небольших планшетов (например, iPhone 12 и Galaxy S) */
+@media only screen and (max-width: 1024px) {
+    body {
+        font-size: 20px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .menu ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .menu ul li {
+        margin: 0 15px;
+    }
+
+    .program {
+        width: 45%;
+        padding: 20px;
+    }
+
+    .program img {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+/* Поддержка экранов планшетов и больших телефонов (например, iPad, Galaxy Tab) */
+@media only screen and (min-width: 1025px) {
+    body {
+        font-size: 22px;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    .menu ul {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .menu ul li {
+        margin: 0 20px;
+    }
+
+    .program {
+        width: 30%;
+        padding: 25px;
+    }
+
+    .program img {
+        width: 100px;
+        height: 100px;
     }
 }
