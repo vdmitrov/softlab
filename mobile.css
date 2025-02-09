@@ -1,6 +1,6 @@
 /* Для мобильных устройств */
 @media (max-width: 768px) {
-    /* Меню с гамбургером */
+    /* Скрываем основное меню */
     .menu {
         display: none; /* Скрываем меню по умолчанию */
     }
@@ -18,7 +18,7 @@
         height: 25px;
         position: absolute;
         top: 10px;
-        right: 10px;
+        left: 10px; /* Перемещаем влево */
         z-index: 999;
     }
 
@@ -32,13 +32,14 @@
     /* Открытие меню */
     .menu.open {
         display: block;
-        position: absolute;
-        top: 50px; /* Под кнопкой гамбургера */
-        left: 0;
-        right: 0;
+        position: fixed;
+        top: 0;
+        left: 0; /* Сдвигаем меню влево */
+        width: 250px; /* Ширина меню */
         background-color: #333;
-        padding: 10px 0;
-        border-radius: 5px;
+        padding: 20px;
+        height: 100%;
+        border-radius: 0 10px 10px 0; /* Скругленные правые углы */
     }
 
     /* Элементы меню */
@@ -49,14 +50,14 @@
     }
 
     .menu li {
-        text-align: center;
-        margin: 10px 0;
+        text-align: left;
+        margin: 15px 0;
     }
 
     .menu a {
         color: white;
         text-decoration: none;
-        font-size: 1.1em;
+        font-size: 1.2em;
     }
 
     /* Карточки */
