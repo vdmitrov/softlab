@@ -73,19 +73,19 @@ const programs = [
 
 /**
  * Отображает карточки программ, фильтруя их по заданным категориям.
- * @param {Array} categories Массив категорий для фильтрации.
+ * @param {Array} categories - массив категорий для фильтрации.
  */
 function displayProgramsByCategory(categories) {
   const programList = document.getElementById("program-list");
   if (!programList) return;
-
+  
   // Очистка контейнера карточек
   programList.innerHTML = "";
 
   // Фильтрация программ по заданным категориям
   const filteredPrograms = programs.filter(program => categories.includes(program.category));
 
-  // Создание карточки для каждой отфильтрованной программы
+  // Создаем карточки для отфильтрованных программ
   filteredPrograms.forEach(program => {
     const programCard = document.createElement("div");
     programCard.classList.add("program");
@@ -102,14 +102,13 @@ function displayProgramsByCategory(categories) {
 
 /**
  * Функция поиска по карточкам программ.
- * При вводе текста скрывает карточки, в которых текст не соответствует запросу.
+ * При вводе текста в поле с id "search" скрывает карточки, в которых текст не содержит введенный запрос.
  */
 function searchPrograms() {
   const query = document.getElementById("search").value.toLowerCase();
   const programCards = document.querySelectorAll(".program");
 
   programCards.forEach(card => {
-    // Если текст карточки содержит запрос, отображаем карточку, иначе скрываем её
     if (card.innerText.toLowerCase().includes(query)) {
       card.style.display = "";
     } else {
@@ -117,3 +116,20 @@ function searchPrograms() {
     }
   });
 }
+
+// Запуск после полной загрузки DOM
+document.addEventListener("DOMContentLoaded", function() {
+  // Определяем, какая страница загружена, и фильтруем программы
+  const path = window.location.pathname.toLowerCase();
+  let categories = [];
+  if (path.includes("android.html")) {
+    categories = ["Android"];
+  } else if (path.includes("linux.html")) {
+    categories = ["Linux"];
+  } else if (path.includes("windows.html")) {
+    categories = ["Windows"];
+  } else {
+    categories = ["Windows", "Android", "Linux"];
+  }
+  displayProgramsByCategory(categories);
+});
