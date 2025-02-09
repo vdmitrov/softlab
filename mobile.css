@@ -1,81 +1,61 @@
-/* Обнуляем отступы и ширину */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Стиль для контейнера, который оборачивает карточки программ */
-.program-list {
-    display: flex;
-    flex-direction: column; /* Режим вертикального расположения */
-    overflow-y: auto; /* Вертикальный скроллинг */
-    padding: 20px;
-    gap: 15px;
-    height: 100vh; /* Высота экрана для вертикальной прокрутки */
-}
-
-/* Стиль для карточек */
-.program {
-    background-color: white;
-    padding: 15px;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    flex: 0 0 auto; /* Каждая карточка будет занимать фиксированную высоту */
-    width: 90%; /* Ширина карточки */
-    margin: 10px auto; /* Центрируем карточки */
-    transition: transform 0.3s ease; /* Добавляем анимацию для эффекта при скролле */
-    word-wrap: break-word; /* Автоматический перенос слов */
-    overflow-wrap: break-word; /* Обеспечиваем правильный перенос длинных слов */
-    white-space: normal; /* Чтобы текст не обрезался */
-}
-
-/* Эффект при наведении */
-.program:hover {
-    transform: scale(1.05);
-}
-
-/* Обновление для мобильных устройств */
-@media only screen and (max-width: 480px) {
-    .program-list {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    .program {
-        width: 95%; /* Меньшая ширина карточек на мобильных */
-    }
-
-    /* Убираем пробелы и отступы между карточками на маленьких экранах */
-    .program-list::-webkit-scrollbar {
-        width: 8px;
-    }
-
-    .program-list::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 10px;
-    }
-
-    .program-list::-webkit-scrollbar-track {
-        background: #f1f1f1;
-    }
-}
-
-/* Стили для планшетов и больших телефонов */
+/* Основной стиль для мобильных устройств */
 @media only screen and (max-width: 768px) {
+    /* Стили для программы */
+    .program-list {
+        display: flex;
+        flex-direction: column; /* Карточки будут выстраиваться по одному */
+        overflow-y: auto; /* Вертикальная прокрутка */
+        height: 100vh; /* Занимает всю высоту экрана */
+        padding: 10px;
+        gap: 10px; /* Отступ между карточками */
+    }
+
     .program {
-        width: 80%; /* Еще меньшая ширина для планшетов */
+        width: 100%; /* Карточка занимает всю ширину экрана */
+        margin: 0; /* Убираем отступы */
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        background-color: white;
+    }
+
+    .program img {
+        width: 100px; /* Уменьшаем картинку */
+        height: 100px;
+    }
+
+    .program h3 {
+        margin: 10px 0 5px;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .program p {
+        font-size: 14px;
+        color: #444;
+    }
+
+    button {
+        margin-top: 10px;
+        width: 100%; /* Кнопка на всю ширину карточки */
     }
 }
 
-/* Для экранов больше 768px - стандартный вид */
-@media only screen and (min-width: 768px) {
+/* Для больших экранов или обычных устройств */
+@media only screen and (min-width: 769px) {
     .program-list {
-        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
     }
 
     .program {
-        width: 30%; /* На больших экранах карточки становятся шире */
+        width: calc(33.333% - 20px);
+        box-sizing: border-box;
     }
 }
