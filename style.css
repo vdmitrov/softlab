@@ -42,6 +42,8 @@ body {
 
 .menu ul li a img {
     margin-right: 8px; /* Отступ между иконкой и текстом */
+    width: 32px; /* Устанавливаем размер иконки */
+    height: 32px; /* Устанавливаем размер иконки */
 }
 
 /* Стиль для поля поиска */
@@ -61,7 +63,7 @@ body {
 /* Программные карточки */
 .program-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Уменьшаем минимальный размер карточек */
     gap: 20px;
     padding: 20px;
 }
@@ -73,6 +75,8 @@ body {
     padding: 15px;
     text-align: center;
     transition: transform 0.3s ease;
+    max-width: 100%; /* Ограничиваем ширину */
+    height: 300px; /* Ограничиваем высоту карточки */
 }
 
 .program img {
