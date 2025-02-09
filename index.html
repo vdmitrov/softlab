@@ -4,17 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SoftLab - Главная</title>
-
-    <link rel="stylesheet" href="style.css"> <!-- Основной CSS -->
-    <link rel="stylesheet" href="mobile.css" media="only screen and (max-width: 768px)"> <!-- Мобильный CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css" media="only screen and (max-width: 768px)">
     <script defer src="script.js"></script>
 </head>
-
 <body>
     <header>
         <input type="text" id="search" placeholder="Поиск программ..." oninput="searchPrograms()">
-
-        <!-- Кнопка гамбургера -->
         <div class="hamburger" onclick="toggleMenu()">
             <div></div>
             <div></div>
@@ -23,7 +19,6 @@
     </header>
 
     <div class="container">
-        <!-- Меню -->
         <nav class="menu">
             <ul>
                 <li><a href="windows.html"><img src="img/windows.png" alt="Windows"> Windows</a></li>
@@ -36,14 +31,23 @@
     <div id="program-list" class="program-list"></div>
 
     <script>
-        // Функция для открытия и закрытия меню
         function toggleMenu() {
             const menu = document.querySelector(".menu");
             menu.classList.toggle("open");
         }
 
-        // Отображаем программы
-        displayProgramsByCategory(["Windows", "Android", "Linux"]);
+        window.onload = function() {
+            const currentPage = window.location.pathname;
+            if (currentPage.includes("android.html")) {
+                displayProgramsByCategory(["Android"]);
+            } else if (currentPage.includes("linux.html")) {
+                displayProgramsByCategory(["Linux"]);
+            } else if (currentPage.includes("windows.html")) {
+                displayProgramsByCategory(["Windows"]);
+            } else {
+                displayProgramsByCategory(["Windows", "Android", "Linux"]);
+            }
+        };
     </script>
 </body>
 </html>
