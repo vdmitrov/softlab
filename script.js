@@ -71,16 +71,16 @@ const programs = [
     }
 ];
 
-// Функция отображения программ по категории
-function displayProgramsByCategory(category) {
+// Функция отображения программ по категориям
+function displayProgramsByCategory(categories) {
     const programList = document.getElementById("program-list");
     if (!programList) return;
 
     // Очистка списка перед добавлением новых программ
     programList.innerHTML = "";
 
-    // Фильтрация программ по категории
-    const filteredPrograms = programs.filter(program => program.category === category);
+    // Фильтрация программ по категориям
+    const filteredPrograms = programs.filter(program => categories.includes(program.category));
 
     // Отображение отфильтрованных программ
     filteredPrograms.forEach(program => {
@@ -100,16 +100,16 @@ function displayProgramsByCategory(category) {
 // Вызов функции, чтобы загрузить программы
 window.onload = function() {
     const currentPage = window.location.pathname;
+
+    // Проверяем, на какой странице мы находимся и отображаем соответствующие программы
     if (currentPage.includes("android.html")) {
-        displayProgramsByCategory("Android");
+        displayProgramsByCategory(["Android"]);
     } else if (currentPage.includes("linux.html")) {
-        displayProgramsByCategory("Linux");
+        displayProgramsByCategory(["Linux"]);
     } else if (currentPage.includes("windows.html")) {
-        displayProgramsByCategory("Windows");
+        displayProgramsByCategory(["Windows"]);
     } else {
-        // Отображаем все программы на главной странице
-        displayProgramsByCategory("Windows");
-        displayProgramsByCategory("Android");
-        displayProgramsByCategory("Linux");
+        // На главной странице отображаем программы всех категорий
+        displayProgramsByCategory(["Windows", "Android", "Linux"]);
     }
 };
