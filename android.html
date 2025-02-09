@@ -17,7 +17,6 @@
 
 <body>
     <header>
-
         <input type="text" id="search" placeholder="Поиск программ..." oninput="searchPrograms()">
     </header>
 
@@ -34,7 +33,10 @@
     <div id="program-list" class="program-list"></div>
 
     <script>
-        displayProgramsByCategory("Android");
+        // Отображаем программы для Android
+        window.onload = function() {
+            displayProgramsByCategory("Android");
+        };
     </script>
 </body>
 </html>
