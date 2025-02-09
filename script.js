@@ -2,18 +2,15 @@ const programs = [
     { name: "Google Chrome", category: "Windows", img: "img/chrome.png", link: "#" },
     { name: "VLC Media Player", category: "Windows", img: "img/vlc.png", link: "#" },
     { name: "WinRAR", category: "Windows", img: "img/winrar.png", link: "#" },
-    { name: "Mozilla Firefox", category: "Linux", img: "img/firefox.png", link: "#" },
-    { name: "LibreOffice", category: "Linux", img: "img/libreoffice.png", link: "#" },
     { name: "Telegram", category: "Android", img: "img/telegram.png", link: "#" },
+    { name: "WhatsApp", category: "Android", img: "img/whatsapp.png", link: "#" },
 ];
 
-function displayPrograms(category) {
+function displayPrograms(programList) {
     const listContainer = document.getElementById("program-list");
     listContainer.innerHTML = "";
 
-    const filteredPrograms = programs.filter(program => program.category === category);
-
-    filteredPrograms.forEach(program => {
+    programList.forEach(program => {
         const div = document.createElement("div");
         div.classList.add("program");
         div.innerHTML = `
@@ -28,20 +25,17 @@ function displayPrograms(category) {
 
 function searchPrograms() {
     const query = document.getElementById("search").value.toLowerCase();
-    const category = document.title.includes("Windows") ? "Windows" :
-                     document.title.includes("Linux") ? "Linux" :
-                     document.title.includes("Android") ? "Android" : null;
-
     const filteredPrograms = programs.filter(program =>
-        program.category === category && program.name.toLowerCase().includes(query)
+        program.name.toLowerCase().includes(query)
     );
+    displayPrograms(filteredPrograms);
+}
 
-    displayPrograms(category);
+function displayProgramsByCategory(category) {
+    const filteredPrograms = programs.filter(program => program.category === category);
+    displayPrograms(filteredPrograms);
 }
 
 window.onload = () => {
-    const category = document.title.includes("Windows") ? "Windows" :
-                     document.title.includes("Linux") ? "Linux" :
-                     document.title.includes("Android") ? "Android" : null;
-    displayPrograms(category);
+    displayPrograms(programs);
 };
