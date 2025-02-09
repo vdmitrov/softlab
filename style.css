@@ -46,8 +46,8 @@ body {
 /* Программные карточки */
 .program-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));  /* Меньше минимальная ширина */
-    gap: 15px;  /* Меньше расстояние между карточками */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));  /* Значительно уменьшаем минимальную ширину */
+    gap: 15px;
     padding: 20px;
 }
 
@@ -55,11 +55,12 @@ body {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
-    padding: 10px;  /* Уменьшаем отступы внутри карточки */
+    padding: 10px;
     text-align: center;
     transition: transform 0.3s ease;
-    max-width: 250px;  /* Ограничиваем максимальную ширину карточки */
-    margin: 0 auto;  /* Центрируем карточку по горизонтали */
+    max-width: 180px;  /* Устанавливаем ограничение по ширине */
+    margin: 0 auto;
+    height: auto;  /* Убираем фиксированную высоту */
 }
 
 .program img {
