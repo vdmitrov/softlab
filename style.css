@@ -4,9 +4,21 @@ body {
     text-align: center;
 }
 
+header {
+    padding: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    font-size: 16px;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
@@ -23,7 +35,36 @@ nav ul li a {
 }
 
 nav ul li img {
-    width: 32px;  /* Размер иконок */
+    width: 32px;
     height: 32px;
     margin-right: 10px;
+}
+
+.program-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.program {
+    width: 200px;
+    background: white;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.program img {
+    width: 64px;
+    height: 64px;
+}
+
+.program button {
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
