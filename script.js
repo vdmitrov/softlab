@@ -1,9 +1,39 @@
 const programs = [
-    { name: "Google Chrome", category: "Windows", img: "img/chrome.png", link: "#" },
-    { name: "VLC Media Player", category: "Windows", img: "img/vlc.png", link: "#" },
-    { name: "WinRAR", category: "Windows", img: "img/winrar.png", link: "#" },
-    { name: "Telegram", category: "Android", img: "img/telegram.png", link: "#" },
-    { name: "WhatsApp", category: "Android", img: "img/whatsapp.png", link: "#" }
+    { 
+        name: "Google Chrome", 
+        category: "Windows", 
+        img: "img/chrome.png", 
+        link: "#", 
+        description: "Быстрый и удобный веб-браузер от Google."
+    },
+    { 
+        name: "VLC Media Player", 
+        category: "Windows", 
+        img: "img/vlc.png", 
+        link: "#", 
+        description: "Популярный медиаплеер с поддержкой множества форматов."
+    },
+    { 
+        name: "WinRAR", 
+        category: "Windows", 
+        img: "img/winrar.png", 
+        link: "#", 
+        description: "Архиватор файлов с высокой степенью сжатия."
+    },
+    { 
+        name: "Telegram", 
+        category: "Android", 
+        img: "img/telegram.png", 
+        link: "#", 
+        description: "Быстрый и безопасный мессенджер."
+    },
+    { 
+        name: "WhatsApp", 
+        category: "Android", 
+        img: "img/whatsapp.png", 
+        link: "#", 
+        description: "Один из самых популярных мессенджеров в мире."
+    }
 ];
 
 function displayPrograms(programList) {
@@ -16,7 +46,8 @@ function displayPrograms(programList) {
         div.innerHTML = `
             <img src="${program.img}" alt="${program.name}">
             <h3>${program.name}</h3>
-            <p>${program.category}</p>
+            <p><strong>${program.category}</strong></p>
+            <p class="description">${program.description}</p>
             <button onclick="location.href='${program.link}'">Скачать</button>
         `;
         listContainer.appendChild(div);
