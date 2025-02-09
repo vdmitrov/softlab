@@ -9,9 +9,7 @@
 </head>
 <body>
     <header>
-        <a href="index.html">
-            <h1>SoftLab</h1>
-        </a>
+        <h1><a href="index.html">SoftLab</a></h1>
         <input type="text" id="search" placeholder="Поиск программ..." oninput="searchPrograms()">
     </header>
 
@@ -28,7 +26,8 @@
     <div id="program-list" class="program-list"></div>
 
     <script>
-        loadPrograms("All");  // Загрузим все программы для главной страницы
+        // Загружаем все программы на главной странице
+        displayPrograms();
     </script>
 </body>
 </html>
