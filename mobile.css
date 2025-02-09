@@ -1,154 +1,86 @@
-/* Глобальные стили */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    /* Контейнер для списка программ */
+    #program-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-/* Настройки для мобильных устройств */
-@media only screen and (max-width: 768px) {
-    /* Настройки для header */
-    header {
-        flex-direction: column; /* Меняем направление на вертикальное */
-        align-items: center; /* Выравниваем по центру */
-        padding: 15px;
+    /* Стиль для карточек */
+    .program {
+        width: 90%; /* Карточка занимает 90% ширины экрана */
+        max-width: 350px; /* Ограничение ширины карточки */
+        margin: 10px 0; /* Отступы между карточками */
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden; /* Обрезаем контент, который выходит за пределы */
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Изображение внутри карточки */
+    .program img {
+        width: 100%;
+        height: 200px; /* Фиксированная высота для изображения */
+        object-fit: cover; /* Сохраняем пропорции */
+    }
+
+    /* Заголовок карточки */
+    .program .program-title {
+        padding: 10px;
+        font-size: 1.1em;
+        font-weight: bold;
         text-align: center;
+        overflow: hidden; /* Обрезаем текст, если он не помещается */
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
-    header h1 {
-        font-size: 20px;
-        margin: 10px 0;
-        width: 100%; /* Заголовок занимает всю ширину */
+    /* Описание программы */
+    .program .program-description {
+        padding: 10px;
+        font-size: 0.9em;
+        color: #555;
+        text-align: justify;
+        flex-grow: 1;
     }
 
-    /* Настройки для .menu */
-    .menu {
-        width: 100%; /* Меню растягиваем на всю ширину */
-        padding: 0;
-        margin: 0;
+    /* Поиск */
+    header input[type="text"] {
+        width: 80%;
+        padding: 10px;
+        font-size: 1em;
+        margin: 10px auto;
+        display: block;
+        border-radius: 5px;
+        border: 1px solid #ccc;
     }
 
+    /* Меню навигации */
     .menu ul {
         display: flex;
-        justify-content: space-around; /* Элементы меню по бокам */
-        width: 100%;
+        justify-content: space-around;
         padding: 0;
-        margin: 0;
+        margin: 10px 0;
     }
 
-    .menu ul li {
-        margin: 0;
+    .menu li {
+        list-style-type: none;
     }
 
-    .menu ul li a {
-        font-size: 16px;
-        padding: 10px;
-        display: inline-block;
-        width: 100%; /* Делает ссылки в меню растягиваемыми */
-        text-align: center;
-    }
-
-    .menu ul li a:hover {
-        background-color: #555;
-        border-radius: 5px;
-    }
-
-    /* Для карточек */
-    .program-list {
+    .menu a {
         display: flex;
-        flex-direction: column; /* Карточки одна под другой */
         align-items: center;
-        padding: 10px;
-        width: 100%;
-        margin: 0 auto;
-        overflow-y: auto; /* Прокрутка при необходимости */
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
     }
 
-    .program {
-        background-color: white;
-        padding: 15px;
-        text-align: center;
-        border-radius: 8px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        width: 90%; /* Карточки занимают 90% ширины */
-        margin: 10px 0; /* Отступы между карточками */
-        box-sizing: border-box; /* Чтобы отступы не влияли на ширину */
+    .menu a img {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
     }
-
-    .program img {
-        width: 60px; /* Уменьшаем размер картинки для мобильных устройств */
-        height: 60px;
-    }
-
-    .program h3 {
-        margin: 10px 0 5px;
-        font-size: 18px;
-    }
-
-    .program p {
-        margin: 5px 0;
-        font-size: 14px;
-        color: #444;
-    }
-
-    /* Кнопки */
-    button {
-        padding: 8px 15px;
-        font-size: 14px;
-    }
-}
-
-/* Стиль для всех экранов, включая большие */
-.program-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Для карточек */
-.program {
-    background-color: white;
-    padding: 15px;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    width: calc(33.333% - 20px); /* На больших экранах карточки по 3 в ряд */
-    box-sizing: border-box;
-}
-
-.program img {
-    width: 80px;
-    height: 80px;
-}
-
-.program h3 {
-    margin: 10px 0 5px;
-    font-size: 18px;
-}
-
-.program p {
-    margin: 5px 0;
-    font-size: 14px;
-    color: #444;
-}
-
-/* Кнопки */
-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-button:hover {
-    background-color: #0056b3;
 }
