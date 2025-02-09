@@ -1,57 +1,26 @@
+/* Общие стили для страницы */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
 }
 
-/* ===== HEADER ===== */
-header {
+/* Стили меню */
+.menu {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background-color: #333;
-    color: white;
-    padding: 15px 20px;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-}
-
-header h1 img {
-    max-height: 40px; /* Установите подходящий размер по высоте */
-    margin-right: 10px; /* Расстояние между лого и текстом */
-}
-
-.search-container {
-    display: flex;
-    align-items: center;
-}
-
-#search {
-    padding: 8px;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    outline: none;
-}
-
-/* ===== NAVIGATION MENU ===== */
-.menu {
-    background-color: #444;
     padding: 10px;
+    border-radius: 5px;
 }
 
 .menu ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
-    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
 .menu ul li {
@@ -59,82 +28,34 @@ header h1 img {
 }
 
 .menu ul li a {
-    text-decoration: none;
     color: white;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    transition: 0.3s;
+    text-decoration: none;
+    font-size: 16px;
 }
 
-.menu ul li a:hover {
-    background-color: #555;
-    border-radius: 5px;
-}
-
-.menu ul li img {
-    width: 24px;
-    height: 24px;
-    margin-right: 8px;
-}
-
-/* ===== PROGRAM LIST ===== */
+/* Программные карточки */
 .program-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
-    justify-content: space-between; /* Разделение карточек равномерно */
-    max-width: 1200px;
-    margin: 0 auto; /* Центрирование */
 }
 
-/* ===== PROGRAM CARD ===== */
 .program {
-    background-color: white;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
     padding: 15px;
     text-align: center;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    width: calc(33.333% - 20px); /* Равномерная ширина для трех карточек в строке */
-    box-sizing: border-box; /* Учитываем отступы в ширине */
+    transition: transform 0.3s ease;
 }
 
 .program img {
-    width: 80px;
-    height: 80px;
-}
-
-.program h3 {
-    margin: 10px 0 5px;
-    font-size: 18px;
-}
-
-.program p {
-    margin: 5px 0;
-    font-size: 14px;
-    color: #444;
-}
-
-/* ===== DESCRIPTION STYLING ===== */
-.program .description {
-    color: #666;
-    font-size: 14px;
-    margin: 8px 0;
-}
-
-/* ===== BUTTON STYLING ===== */
-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px;
+    max-width: 100%;
+    height: auto;
     border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
 }
 
-button:hover {
-    background-color: #0056b3;
+.program:hover {
+    transform: scale(1.05);
 }
