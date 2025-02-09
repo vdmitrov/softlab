@@ -3,12 +3,12 @@ const programs = [
     { name: "VLC Media Player", category: "Windows", img: "img/vlc.png", link: "#" },
     { name: "WinRAR", category: "Windows", img: "img/winrar.png", link: "#" },
     { name: "Telegram", category: "Android", img: "img/telegram.png", link: "#" },
-    { name: "WhatsApp", category: "Android", img: "img/whatsapp.png", link: "#" },
+    { name: "WhatsApp", category: "Android", img: "img/whatsapp.png", link: "#" }
 ];
 
 function displayPrograms(programList) {
     const listContainer = document.getElementById("program-list");
-    listContainer.innerHTML = "";
+    listContainer.innerHTML = ""; 
 
     programList.forEach(program => {
         const div = document.createElement("div");
@@ -25,14 +25,9 @@ function displayPrograms(programList) {
 
 function searchPrograms() {
     const query = document.getElementById("search").value.toLowerCase();
-    const filteredPrograms = programs.filter(program =>
+    const filteredPrograms = programs.filter(program => 
         program.name.toLowerCase().includes(query)
     );
-    displayPrograms(filteredPrograms);
-}
-
-function displayProgramsByCategory(category) {
-    const filteredPrograms = programs.filter(program => program.category === category);
     displayPrograms(filteredPrograms);
 }
 
