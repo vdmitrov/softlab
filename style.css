@@ -33,13 +33,14 @@ body {
     font-size: 16px;
 }
 
+/* Стиль для поля поиска */
 .menu input[type="text"] {
     padding: 8px 12px;
     font-size: 14px;
     border-radius: 5px;
     border: none;
     margin-left: 20px;
-    width: 200px;  /* Устанавливаем ширину для поисковой строки */
+    width: 180px;  /* Устанавливаем ширину для поисковой строки */
     box-sizing: border-box;
 }
 
