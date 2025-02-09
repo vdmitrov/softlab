@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoftLab - Каталог программ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Шапка -->
+    <header>
+        <h1>SoftLab</h1>
+        <input type="text" id="search" placeholder="🔍 Поиск программ..." onkeyup="searchPrograms()">
+    </header>
+
+    <!-- Меню -->
+    <nav>
+        <ul>
+            <li><a href="#">Все программы</a></li>
+            <li><a href="#">Для Windows</a></li>
+            <li><a href="#">Для Mac</a></li>
+            <li><a href="#">Для Android</a></li>
+        </ul>
+    </nav>
+
+    <!-- Список программ -->
+    <main id="program-list">
+        <!-- JavaScript сам добавит программы -->
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
