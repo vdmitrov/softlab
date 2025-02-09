@@ -23,7 +23,7 @@ const programs = [
     { 
         name: "Telegram", 
         category: "Android", 
-        img: "img/telegram.png", 
+        img: "img/Telegram.png", 
         link: "#", 
         description: "Безопасный мессенджер с поддержкой чатов и звонков." 
     },
