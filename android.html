@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Android - SoftLab</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Android - SoftLab</title>
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mobile.css" media="only screen and (max-width: 768px)">
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mobile.css" media="only screen and (max-width: 768px)">
-    <script defer src="script.js"></script>
+  <script defer src="script.js"></script>
 </head>
-
 <body>
-    <header>
+  <header>
+    <div class="burger-menu" onclick="toggleMenu()">
       <div></div>
       <div></div>
       <div></div>
     </div>
-        <div class="menu">
-            <ul>
-                <li><a href="windows.html"><img src="img/windows.png" alt="Windows"> Windows</a></li>
-                <li><a href="linux.html"><img src="img/linux.png" alt="Linux"> Linux</a></li>
-                <li><a href="android.html"><img src="img/android.png" alt="Android"> Android</a></li>
-            </ul>
-            <input type="text" id="search" placeholder="Поиск программ..." oninput="searchPrograms()">
-        </div>
-    </header>
 
-    <div class="container">
-        <div id="program-list" class="program-list"></div>
-    </div>
+    <nav class="mobile-menu">
+      <ul>
+        <li><a href="windows.html"><img src="img/windows.png" alt="Windows"> Windows</a></li>
+        <li><a href="linux.html"><img src="img/linux.png" alt="Linux"> Linux</a></li>
+        <li><a href="android.html"><img src="img/android.png" alt="Android"> Android</a></li>
+      </ul>
+      <input type="text" id="search" placeholder="🔍︎ Поиск программ..." oninput="searchPrograms()">
+    </nav>
+  </header>
 
-    <script>
-        // Отображаем программы для Android
-        window.onload = function() {
-            displayProgramsByCategory(["Android"]);
-        };
-    </script>
+  <div class="container">
+    <h1>Программы для Android</h1>
+    <div id="program-list" class="program-list"></div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector(".mobile-menu").classList.toggle("open");
+    }
+
+    window.addEventListener("DOMContentLoaded", function() {
+      displayProgramsByCategory(["Android"]); // Отображаем только Android-программы
+    });
+  </script>
 </body>
 </html>
