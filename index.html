@@ -5,41 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Главная - SoftLab</title>
   
-  <!-- Основной CSS -->
   <link rel="stylesheet" href="style.css">
-  <!-- Мобильный CSS (применяется при ширине экрана до 768px) -->
   <link rel="stylesheet" href="mobile.css" media="only screen and (max-width: 768px)">
-  
-  <!-- Подключение основного скрипта -->
+
   <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- Оборачиваем всё содержимое в контейнер #wrapper -->
-  <div id="wrapper">
-    <header>
-      <!-- Кнопка гамбургера (для мобильной версии, если используется переключение меню) -->
-      <div class="hamburger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <!-- Меню с категориями и поисковой строкой -->
-      <div class="menu">
-        <ul>
-          <li><a href="windows.html"><img src="img/windows.png" alt="Windows"> Windows</a></li>
-          <li><a href="linux.html"><img src="img/linux.png" alt="Linux"> Linux</a></li>
-          <li><a href="android.html"><img src="img/android.png" alt="Android"> Android</a></li>
-        </ul>
-        <input type="text" id="search" placeholder="🔍︎ Поиск программ..." oninput="searchPrograms()">
-      </div>
-    </header>
-  
-    <div class="container">
-      <div id="program-list" class="program-list"></div>
+  <header>
+    <!-- Бургер-меню -->
+    <div class="burger-menu" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
+
+    <!-- Выпадающее меню (по умолчанию скрыто) -->
+    <nav class="mobile-menu">
+      <ul>
+        <li><a href="windows.html"><img src="img/windows.png" alt="Windows"> Windows</a></li>
+        <li><a href="linux.html"><img src="img/linux.png" alt="Linux"> Linux</a></li>
+        <li><a href="android.html"><img src="img/android.png" alt="Android"> Android</a></li>
+      </ul>
+      <input type="text" id="search" placeholder="🔍︎ Поиск программ..." oninput="searchPrograms()">
+    </nav>
+  </header>
+
+  <div class="container">
+    <div id="program-list" class="program-list"></div>
   </div>
-  
+
   <script>
+    function toggleMenu() {
+      document.querySelector(".mobile-menu").classList.toggle("open");
+    }
+
     window.addEventListener("DOMContentLoaded", function() {
       displayProgramsByCategory(["Windows", "Linux", "Android"]);
     });
