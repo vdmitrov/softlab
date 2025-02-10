@@ -1,103 +1,68 @@
-@media (max-width: 768px) {
-  /* Мобильное меню — изначально скрыто */
-  #mobile-menu {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 10px;
-    z-index: 1000;
-  }
+/* Убираем белую простыню */
+body {
+  margin: 0;
+  padding: 0;
+}
 
-  /* Когда к контейнеру добавлен класс .open, меню отображается */
-  #mobile-menu.open {
-    display: flex;
-  }
+/* Бургер-меню */
+.burger-menu {
+  width: 40px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 100;
+}
 
-  /* Стили для списка категорий в мобильном меню */
-  #mobile-menu ul {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+.burger-menu div {
+  width: 100%;
+  height: 5px;
+  background-color: white;
+  border-radius: 5px;
+}
 
-  #mobile-menu ul li {
-    margin: 10px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+/* Выпадающее меню */
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  background: #007bff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-  #mobile-menu ul li a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-  }
+.mobile-menu.open {
+  display: block;
+}
 
-  #mobile-menu ul li a img {
-    width: 36px;  /* Иконки: 36x36 пикселей */
-    height: 36px;
-    margin-right: 8px;
-  }
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+}
 
-  /* Поле поиска внутри мобильного меню */
-  #mobile-menu input[type="text"] {
-    width: 90%;
-    padding: 8px 12px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    margin-top: 15px;
-    box-sizing: border-box;
-    display: block;
-  }
+.mobile-menu li {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+}
 
-  /* Гамбургер — кнопка для переключения мобильного меню */
-  .hamburger {
-    display: flex;
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 30px;
-    height: 25px;
-    cursor: pointer;
-    z-index: 1100;
-  }
+.mobile-menu img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
 
-  .hamburger div {
-    width: 100%;
-    height: 4px;
-    background-color: #fff;
-    margin: 2px 0;
-  }
-
-  /* Адаптация карточек для мобильных — выводим их в одну колонку */
-  .program-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
-    padding: 15px;
-    margin-top: 160px; /* Отступ сверху, чтобы мобильное меню не перекрывало контент */
-  }
-
-  .program {
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 8px;
-  }
+/* Стили для поля поиска */
+.mobile-menu input {
+  width: 100%;
+  padding: 5px;
+  margin-top: 10px;
+  border-radius: 3px;
+  border: none;
 }
